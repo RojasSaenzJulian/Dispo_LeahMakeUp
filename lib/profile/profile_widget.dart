@@ -447,7 +447,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                     await authManager.signOut();
                     GoRouter.of(context).clearRedirectLocation();
 
-                    context.goNamedAuth('login', context.mounted);
+                    context.goNamedAuth('pruebas', context.mounted);
                   },
                   text: 'Cerrar Sesión',
                   options: FFButtonOptions(

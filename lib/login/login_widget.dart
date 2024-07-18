@@ -351,7 +351,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                     }
 
                                     context.goNamedAuth(
-                                        'null', context.mounted);
+                                        'productsAdmin', context.mounted);
                                   },
                                   text: 'Sign In',
                                   options: FFButtonOptions(
@@ -405,7 +405,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                     return;
                                   }
 
-                                  context.goNamedAuth('null', context.mounted);
+                                  context.goNamedAuth(
+                                      'productsAdmin', context.mounted);
                                 },
                                 text: 'Continuar con Google',
                                 icon: const FaIcon(
@@ -456,7 +457,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                         }
 
                                         context.goNamedAuth(
-                                            'null', context.mounted);
+                                            'productsAdmin', context.mounted);
                                       },
                                       text: 'Continuar con Apple',
                                       icon: const FaIcon(

@@ -525,7 +525,7 @@ class _RegisterWidgetState extends State<RegisterWidget>
                                         }
 
                                         context.goNamedAuth(
-                                            'null', context.mounted);
+                                            'productsAdmin', context.mounted);
                                       },
                                       text: 'Create Account',
                                       options: FFButtonOptions(

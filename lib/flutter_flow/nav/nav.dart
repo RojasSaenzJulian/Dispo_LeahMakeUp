@@ -72,13 +72,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? () : const LoginWidget(),
+          appStateNotifier.loggedIn ? const ProductsAdminWidget() : const PruebasWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? () : const LoginWidget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? const ProductsAdminWidget()
+              : const PruebasWidget(),
         ),
         FFRoute(
           name: 'login',
@@ -119,6 +120,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'homestore',
           path: '/homestore',
           builder: (context, params) => const HomestoreWidget(),
+        ),
+        FFRoute(
+          name: 'productsAdmin',
+          path: '/productsAdmin',
+          builder: (context, params) => const ProductsAdminWidget(),
+        ),
+        FFRoute(
+          name: 'categoriaAdmin',
+          path: '/categoriaAdmin',
+          builder: (context, params) => const CategoriaAdminWidget(),
+        ),
+        FFRoute(
+          name: 'pruebas',
+          path: '/pruebas',
+          builder: (context, params) => const PruebasWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -289,7 +305,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/login';
+            return '/pruebas';
           }
           return null;
         },

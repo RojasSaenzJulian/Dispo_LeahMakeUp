@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -29,7 +30,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
 
     _model.tabBarController = TabController(
       vsync: this,
-      length: 4,
+      length: 2,
       initialIndex: 0,
     )..addListener(() => setState(() {}));
   }
@@ -65,7 +66,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
             ),
             onPressed: () async {
               context.pushNamed(
-                'null',
+                'pruebas',
                 extra: <String, dynamic>{
                   kTransitionInfoKey: const TransitionInfo(
                     hasTransition: true,
@@ -182,1099 +183,717 @@ class _ProductsWidgetState extends State<ProductsWidget>
               ],
             ),
             Expanded(
-              child: Column(
-                children: [
-                  Align(
-                    alignment: const Alignment(-1.0, 0),
-                    child: FlutterFlowButtonTabBar(
-                      useToggleButtonStyle: false,
-                      isScrollable: true,
-                      labelStyle:
-                          FlutterFlowTheme.of(context).titleMedium.override(
-                                fontFamily: 'Readex Pro',
-                                letterSpacing: 0.0,
-                              ),
-                      unselectedLabelStyle: const TextStyle(),
-                      labelColor: const Color(0xD2A63463),
-                      unselectedLabelColor: const Color(0xB7252D32),
-                      backgroundColor: const Color(0xFFF7C2C1),
-                      borderColor: const Color(0x4CD045AB),
-                      borderWidth: 2.0,
-                      borderRadius: 12.0,
-                      elevation: 0.0,
-                      labelPadding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                      buttonMargin:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 16.0, 0.0),
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                      tabs: const [
-                        Tab(
-                          text: 'Paletas',
-                        ),
-                        Tab(
-                          text: 'Brochas',
-                        ),
-                        Tab(
-                          text: 'Labiales',
-                        ),
-                        Tab(
-                          text: 'Sombras',
-                        ),
-                      ],
-                      controller: _model.tabBarController,
-                      onTap: (i) async {
-                        [
-                          () async {},
-                          () async {},
-                          () async {},
-                          () async {}
-                        ][i]();
-                      },
-                    ),
-                  ),
-                  Expanded(
-                    child: TabBarView(
-                      controller: _model.tabBarController,
-                      children: [
-                        SingleChildScrollView(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 16.0, 0.0, 0.0),
-                                child: Text(
-                                  'Categories',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        fontFamily: 'Outfit',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 12.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://makeupforever.co.id/cdn/shop/products/I000012000_1_e922c30a-6f67-4cbb-87f7-cdb51d6e97c3.png?v=1680680292',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            ' Paleta 1',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 8.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://makeupforever.co.id/cdn/shop/products/I000012000_1_e922c30a-6f67-4cbb-87f7-cdb51d6e97c3.png?v=1680680292',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Paleta 2',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 8.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://makeupforever.co.id/cdn/shop/products/I000012000_1_e922c30a-6f67-4cbb-87f7-cdb51d6e97c3.png?v=1680680292',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Paleta 3',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 8.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://makeupforever.co.id/cdn/shop/products/I000012000_1_e922c30a-6f67-4cbb-87f7-cdb51d6e97c3.png?v=1680680292',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Paleta 4',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 8.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://makeupforever.co.id/cdn/shop/products/I000012000_1_e922c30a-6f67-4cbb-87f7-cdb51d6e97c3.png?v=1680680292',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Paleta 5',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 8.0, 16.0, 44.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://makeupforever.co.id/cdn/shop/products/I000012000_1_e922c30a-6f67-4cbb-87f7-cdb51d6e97c3.png?v=1680680292',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Paleta 6',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
+              child: StreamBuilder<List<CategoriaRecord>>(
+                stream: queryCategoriaRecord(),
+                builder: (context, snapshot) {
+                  // Customize what your widget looks like when it's loading.
+                  if (!snapshot.hasData) {
+                    return Center(
+                      child: SizedBox(
+                        width: 50.0,
+                        height: 50.0,
+                        child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            FlutterFlowTheme.of(context).primary,
                           ),
                         ),
-                        SingleChildScrollView(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 16.0, 0.0, 0.0),
-                                child: Text(
-                                  'Categories',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        fontFamily: 'Outfit',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 8.0, 16.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed('null');
-                                  },
-                                  child: Container(
-                                    width: double.infinity,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 8.0, 12.0, 8.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                            child: Image.network(
-                                              'https://i.pinimg.com/originals/bf/a1/36/bfa13682a9fa155a474df025e86a8396.png',
-                                              width: 70.0,
-                                              height: 70.0,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 0.0, 0.0),
-                                            child: Text(
-                                              'Brocha',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 12.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://i.pinimg.com/originals/bf/a1/36/bfa13682a9fa155a474df025e86a8396.png',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Brocha',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 8.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://i.pinimg.com/originals/bf/a1/36/bfa13682a9fa155a474df025e86a8396.png',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Brocha',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 8.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://i.pinimg.com/originals/bf/a1/36/bfa13682a9fa155a474df025e86a8396.png',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Brocha',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 8.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://i.pinimg.com/originals/bf/a1/36/bfa13682a9fa155a474df025e86a8396.png',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Brocha',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 8.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://i.pinimg.com/originals/bf/a1/36/bfa13682a9fa155a474df025e86a8396.png',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Brocha',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 8.0, 16.0, 44.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e67ed1da-48bf-4d03-9654-fa9c7b76ecce/blazer-mid-77-vintage-mens-shoes-nw30B2.png',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Shoes',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SingleChildScrollView(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 16.0, 0.0, 0.0),
-                                child: Text(
-                                  'Productos',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        fontFamily: 'Outfit',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 12.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://images.unsplash.com/photo-1633409361618-c73427e4e206?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw1fHxpY29ufGVufDB8fHx8MTcxOTUxNDA4OHww&ixlib=rb-4.0.3&q=80&w=1080',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Labial ',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 8.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://images.unsplash.com/photo-1633409361618-c73427e4e206?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw1fHxpY29ufGVufDB8fHx8MTcxOTUxNDA4OHww&ixlib=rb-4.0.3&q=80&w=1080',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Labial',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 8.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://images.unsplash.com/photo-1633409361618-c73427e4e206?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw1fHxpY29ufGVufDB8fHx8MTcxOTUxNDA4OHww&ixlib=rb-4.0.3&q=80&w=1080',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Labial',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 8.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://images.unsplash.com/photo-1633409361618-c73427e4e206?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw1fHxpY29ufGVufDB8fHx8MTcxOTUxNDA4OHww&ixlib=rb-4.0.3&q=80&w=1080',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Labial',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 8.0, 16.0, 0.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://images.unsplash.com/photo-1633409361618-c73427e4e206?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw1fHxpY29ufGVufDB8fHx8MTcxOTUxNDA4OHww&ixlib=rb-4.0.3&q=80&w=1080',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Labial',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 8.0, 16.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed('null');
-                                  },
-                                  child: Container(
-                                    width: double.infinity,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 8.0, 12.0, 8.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                            child: Image.network(
-                                              'https://images.unsplash.com/photo-1633409361618-c73427e4e206?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw1fHxpY29ufGVufDB8fHx8MTcxOTUxNDA4OHww&ixlib=rb-4.0.3&q=80&w=1080',
-                                              width: 70.0,
-                                              height: 70.0,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 0.0, 0.0),
-                                            child: Text(
-                                              'Labial',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            'Readex Pro',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 8.0, 16.0, 44.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 12.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.network(
-                                            'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e67ed1da-48bf-4d03-9654-fa9c7b76ecce/blazer-mid-77-vintage-mens-shoes-nw30B2.png',
-                                            width: 70.0,
-                                            height: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Shoes',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Text(
-                          'Tab View 4',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
+                      ),
+                    );
+                  }
+                  List<CategoriaRecord> tabBarCategoriaRecordList =
+                      snapshot.data!;
+
+                  return Column(
+                    children: [
+                      Align(
+                        alignment: const Alignment(-1.0, 0),
+                        child: FlutterFlowButtonTabBar(
+                          useToggleButtonStyle: false,
+                          isScrollable: true,
+                          labelStyle:
+                              FlutterFlowTheme.of(context).titleMedium.override(
                                     fontFamily: 'Readex Pro',
-                                    fontSize: 32.0,
                                     letterSpacing: 0.0,
                                   ),
+                          unselectedLabelStyle: const TextStyle(),
+                          labelColor: const Color(0xD2A63463),
+                          unselectedLabelColor: const Color(0xB7252D32),
+                          backgroundColor: const Color(0xFFF7C2C1),
+                          borderColor: const Color(0x4CD045AB),
+                          borderWidth: 2.0,
+                          borderRadius: 12.0,
+                          elevation: 0.0,
+                          labelPadding: const EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 16.0, 0.0),
+                          buttonMargin: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 12.0, 16.0, 0.0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 16.0, 0.0),
+                          tabs: [
+                            StreamBuilder<List<CategoriaRecord>>(
+                              stream: queryCategoriaRecord(),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }
+                                List<CategoriaRecord> tabCategoriaRecordList =
+                                    snapshot.data!;
+
+                                return Tab(
+                                  text: tabCategoriaRecordList
+                                      .first.nombreCategoria,
+                                );
+                              },
+                            ),
+                            const Tab(
+                              text: 'Brochas',
+                            ),
+                          ],
+                          controller: _model.tabBarController,
+                          onTap: (i) async {
+                            [() async {}, () async {}][i]();
+                          },
                         ),
-                      ],
-                    ),
-                  ),
-                ],
+                      ),
+                      Expanded(
+                        child: TabBarView(
+                          controller: _model.tabBarController,
+                          children: [
+                            SingleChildScrollView(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 16.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Productos',
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 0.0, 20.0, 0.0),
+                                    child: StreamBuilder<List<ProductosRecord>>(
+                                      stream: queryProductosRecord(),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        List<ProductosRecord>
+                                            listViewProductosRecordList =
+                                            snapshot.data!;
+
+                                        return ListView.builder(
+                                          padding: EdgeInsets.zero,
+                                          shrinkWrap: true,
+                                          scrollDirection: Axis.vertical,
+                                          itemCount: listViewProductosRecordList
+                                              .length,
+                                          itemBuilder:
+                                              (context, listViewIndex) {
+                                            final listViewProductosRecord =
+                                                listViewProductosRecordList[
+                                                    listViewIndex];
+                                            return Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
+                                              child: Container(
+                                                width: 100.0,
+                                                height: 100.0,
+                                                decoration: BoxDecoration(
+                                                  color: const Color(0x34EAE7E7),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12.0),
+                                                ),
+                                                child: Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 12.0, 0.0, 12.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    10.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                          child: Image.network(
+                                                            listViewProductosRecord
+                                                                .imagen,
+                                                            width: MediaQuery
+                                                                        .sizeOf(
+                                                                            context)
+                                                                    .width *
+                                                                0.15,
+                                                            height: MediaQuery
+                                                                        .sizeOf(
+                                                                            context)
+                                                                    .height *
+                                                                0.07,
+                                                            fit: BoxFit.cover,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    12.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      listViewProductosRecord
+                                                                          .nombreProducto,
+                                                                      'sin nombre',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                        ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    children: [
+                                                                      Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            4.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          '₡',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Readex Pro',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                  Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      listViewProductosRecord
+                                                                          .precio
+                                                                          .toString(),
+                                                                      '0',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SingleChildScrollView(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 16.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Categories',
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 8.0, 16.0, 0.0),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        context.pushNamed('productsAdmin');
+                                      },
+                                      child: Container(
+                                        width: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  8.0, 8.0, 12.0, 8.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                                child: Image.network(
+                                                  'https://i.pinimg.com/originals/bf/a1/36/bfa13682a9fa155a474df025e86a8396.png',
+                                                  width: 70.0,
+                                                  height: 70.0,
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  'Brocha',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 12.0, 16.0, 0.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 8.0, 12.0, 8.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                              child: Image.network(
+                                                'https://i.pinimg.com/originals/bf/a1/36/bfa13682a9fa155a474df025e86a8396.png',
+                                                width: 70.0,
+                                                height: 70.0,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                'Brocha',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 8.0, 16.0, 0.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 8.0, 12.0, 8.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                              child: Image.network(
+                                                'https://i.pinimg.com/originals/bf/a1/36/bfa13682a9fa155a474df025e86a8396.png',
+                                                width: 70.0,
+                                                height: 70.0,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                'Brocha',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 8.0, 16.0, 0.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 8.0, 12.0, 8.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                              child: Image.network(
+                                                'https://i.pinimg.com/originals/bf/a1/36/bfa13682a9fa155a474df025e86a8396.png',
+                                                width: 70.0,
+                                                height: 70.0,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                'Brocha',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 8.0, 16.0, 0.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 8.0, 12.0, 8.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                              child: Image.network(
+                                                'https://i.pinimg.com/originals/bf/a1/36/bfa13682a9fa155a474df025e86a8396.png',
+                                                width: 70.0,
+                                                height: 70.0,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                'Brocha',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 8.0, 16.0, 0.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 8.0, 12.0, 8.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                              child: Image.network(
+                                                'https://i.pinimg.com/originals/bf/a1/36/bfa13682a9fa155a474df025e86a8396.png',
+                                                width: 70.0,
+                                                height: 70.0,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                'Brocha',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 8.0, 16.0, 44.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 8.0, 12.0, 8.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                              child: Image.network(
+                                                'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e67ed1da-48bf-4d03-9654-fa9c7b76ecce/blazer-mid-77-vintage-mens-shoes-nw30B2.png',
+                                                width: 70.0,
+                                                height: 70.0,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 0.0, 0.0, 0.0),
+                                              child: Text(
+                                                'Shoes',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  );
+                },
               ),
             ),
           ],

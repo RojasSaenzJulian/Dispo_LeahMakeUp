@@ -11,6 +11,8 @@ import 'schema/envio_record.dart';
 import 'schema/marca_record.dart';
 import 'schema/descuento_record.dart';
 import 'schema/metodo_pago_record.dart';
+import 'schema/productos_record.dart';
+import 'schema/categoria_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -25,6 +27,8 @@ export 'schema/envio_record.dart';
 export 'schema/marca_record.dart';
 export 'schema/descuento_record.dart';
 export 'schema/metodo_pago_record.dart';
+export 'schema/productos_record.dart';
+export 'schema/categoria_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -243,6 +247,80 @@ Future<List<MetodoPagoRecord>> queryMetodoPagoRecordOnce({
     queryCollectionOnce(
       MetodoPagoRecord.collection,
       MetodoPagoRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query ProductosRecords (as a Stream and as a Future).
+Future<int> queryProductosRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      ProductosRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<ProductosRecord>> queryProductosRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      ProductosRecord.collection,
+      ProductosRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<ProductosRecord>> queryProductosRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      ProductosRecord.collection,
+      ProductosRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query CategoriaRecords (as a Stream and as a Future).
+Future<int> queryCategoriaRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      CategoriaRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<CategoriaRecord>> queryCategoriaRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      CategoriaRecord.collection,
+      CategoriaRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<CategoriaRecord>> queryCategoriaRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      CategoriaRecord.collection,
+      CategoriaRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
