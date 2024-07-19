@@ -135,6 +135,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'pruebas',
           path: '/pruebas',
           builder: (context, params) => const PruebasWidget(),
+        ),
+        FFRoute(
+          name: 'delivery',
+          path: '/delivery',
+          builder: (context, params) => const DeliveryWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
