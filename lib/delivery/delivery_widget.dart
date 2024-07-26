@@ -715,6 +715,28 @@ class _DeliveryWidgetState extends State<DeliveryWidget> {
                                 codPostal:
                                     _model.txtCodPostalTextController.text,
                               ));
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'Dirección guardada!',
+                                style: TextStyle(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                ),
+                              ),
+                              duration: const Duration(milliseconds: 4000),
+                              backgroundColor:
+                                  FlutterFlowTheme.of(context).secondary,
+                            ),
+                          );
+                          setState(() {
+                            _model.txtProvinciaTextController?.clear();
+                            _model.txtCantonTextController?.clear();
+                            _model.txtDistritoTextController?.clear();
+                            _model.txtCodPostalTextController?.clear();
+                            _model.txtDetalleTextController?.clear();
+                            _model.txtTelefonoTextController?.clear();
+                          });
                         },
                         text: 'Guardar',
                         icon: const Icon(

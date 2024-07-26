@@ -157,7 +157,7 @@ class _BsCrearCategoriaWidgetState extends State<BsCrearCategoriaWidget> {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                               content: Text(
-                                'Product created',
+                                '¡Categoría creada!',
                                 style: TextStyle(
                                   color: Color(0xFF161616),
                                 ),

@@ -1,10 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'login_model.dart';
 export 'login_model.dart';
@@ -16,13 +14,10 @@ class LoginWidget extends StatefulWidget {
   State<LoginWidget> createState() => _LoginWidgetState();
 }
 
-class _LoginWidgetState extends State<LoginWidget>
-    with TickerProviderStateMixin {
+class _LoginWidgetState extends State<LoginWidget> {
   late LoginModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -34,43 +29,6 @@ class _LoginWidgetState extends State<LoginWidget>
 
     _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
-
-    animationsMap.addAll({
-      'containerOnPageLoadAnimation': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          VisibilityEffect(duration: 1.ms),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: const Offset(0.0, 140.0),
-            end: const Offset(0.0, 0.0),
-          ),
-          ScaleEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: const Offset(0.9, 0.0),
-            end: const Offset(1.0, 0.0),
-          ),
-          TiltEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: const Offset(-0.349, 0),
-            end: const Offset(0, 0),
-          ),
-        ],
-      ),
-    });
   }
 
   @override
@@ -534,8 +492,7 @@ class _LoginWidgetState extends State<LoginWidget>
                         ),
                       ),
                     ),
-                  ).animateOnPageLoad(
-                      animationsMap['containerOnPageLoadAnimation']!),
+                  ),
                 ),
               ],
             ),

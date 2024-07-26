@@ -1,10 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'register_model.dart';
 export 'register_model.dart';
 
@@ -15,67 +14,24 @@ class RegisterWidget extends StatefulWidget {
   State<RegisterWidget> createState() => _RegisterWidgetState();
 }
 
-class _RegisterWidgetState extends State<RegisterWidget>
-    with TickerProviderStateMixin {
+class _RegisterWidgetState extends State<RegisterWidget> {
   late RegisterModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => RegisterModel());
 
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
 
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
     _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
-
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
-
-    animationsMap.addAll({
-      'containerOnPageLoadAnimation': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          VisibilityEffect(duration: 1.ms),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: const Offset(0.0, 140.0),
-            end: const Offset(0.0, 0.0),
-          ),
-          ScaleEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: const Offset(0.9, 0.0),
-            end: const Offset(1.0, 0.0),
-          ),
-          TiltEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 300.0.ms,
-            begin: const Offset(-0.349, 0),
-            end: const Offset(0, 0),
-          ),
-        ],
-      ),
-    });
   }
 
   @override
@@ -200,8 +156,8 @@ class _RegisterWidgetState extends State<RegisterWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 16.0),
                                     child: TextFormField(
-                                      controller: _model.textController1,
-                                      focusNode: _model.textFieldFocusNode1,
+                                      controller: _model.textController,
+                                      focusNode: _model.textFieldFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -258,7 +214,7 @@ class _RegisterWidgetState extends State<RegisterWidget>
                                             fontFamily: 'Readex Pro',
                                             letterSpacing: 0.0,
                                           ),
-                                      validator: _model.textController1Validator
+                                      validator: _model.textControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -443,78 +399,12 @@ class _RegisterWidgetState extends State<RegisterWidget>
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 16.0),
-                                    child: TextFormField(
-                                      controller: _model.textController2,
-                                      focusNode: _model.textFieldFocusNode2,
-                                      autofocus: true,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText: 'Confirmar Contraseña',
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              letterSpacing: 0.0,
-                                            ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      validator: _model.textController2Validator
-                                          .asValidator(context),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 16.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
                                         GoRouter.of(context).prepareAuthEvent();
 
-                                        final user =
-                                            await authManager.signInWithEmail(
+                                        final user = await authManager
+                                            .createAccountWithEmail(
                                           context,
                                           _model
                                               .emailAddressTextController.text,
@@ -554,12 +444,136 @@ class _RegisterWidgetState extends State<RegisterWidget>
                                       ),
                                     ),
                                   ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 16.0),
+                                    child: Text(
+                                      'Puedes registrate con:',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 16.0),
+                                    child: FFButtonWidget(
+                                      onPressed: () async {
+                                        GoRouter.of(context).prepareAuthEvent();
+                                        final user = await authManager
+                                            .signInWithGoogle(context);
+                                        if (user == null) {
+                                          return;
+                                        }
+
+                                        context.goNamedAuth(
+                                            'productsAdmin', context.mounted);
+                                      },
+                                      text: 'Continuar con Google',
+                                      icon: const FaIcon(
+                                        FontAwesomeIcons.google,
+                                        size: 20.0,
+                                      ),
+                                      options: FFButtonOptions(
+                                        width: double.infinity,
+                                        height: 44.0,
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 0.0),
+                                        iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                            ),
+                                        elevation: 0.0,
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                        hoverColor: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                      ),
+                                    ),
+                                  ),
+                                  isAndroid
+                                      ? Container()
+                                      : Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 16.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              GoRouter.of(context)
+                                                  .prepareAuthEvent();
+                                              final user = await authManager
+                                                  .signInWithApple(context);
+                                              if (user == null) {
+                                                return;
+                                              }
+
+                                              context.goNamedAuth(
+                                                  'productsAdmin',
+                                                  context.mounted);
+                                            },
+                                            text: 'Continuar con Apple',
+                                            icon: const FaIcon(
+                                              FontAwesomeIcons.apple,
+                                              size: 20.0,
+                                            ),
+                                            options: FFButtonOptions(
+                                              width: double.infinity,
+                                              height: 44.0,
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconPadding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              textStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleSmall
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                              elevation: 0.0,
+                                              borderSide: BorderSide(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                width: 2.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(12.0),
+                                              hoverColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                          ),
+                                        ),
                                 ],
                               ),
                             ),
                           ),
-                        ).animateOnPageLoad(
-                            animationsMap['containerOnPageLoadAnimation']!),
+                        ),
                       ),
                     ],
                   ),

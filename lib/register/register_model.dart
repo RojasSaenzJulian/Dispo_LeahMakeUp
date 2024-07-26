@@ -7,9 +7,9 @@ class RegisterModel extends FlutterFlowModel<RegisterWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
+  FocusNode? textFieldFocusNode;
+  TextEditingController? textController;
+  String? Function(BuildContext, String?)? textControllerValidator;
   // State field(s) for emailAddress widget.
   FocusNode? emailAddressFocusNode;
   TextEditingController? emailAddressTextController;
@@ -19,10 +19,6 @@ class RegisterModel extends FlutterFlowModel<RegisterWidget> {
   TextEditingController? passwordTextController;
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
 
   @override
   void initState(BuildContext context) {
@@ -32,16 +28,13 @@ class RegisterModel extends FlutterFlowModel<RegisterWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    textFieldFocusNode?.dispose();
+    textController?.dispose();
 
     emailAddressFocusNode?.dispose();
     emailAddressTextController?.dispose();
 
     passwordFocusNode?.dispose();
     passwordTextController?.dispose();
-
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
   }
 }
