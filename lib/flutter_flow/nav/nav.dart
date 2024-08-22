@@ -72,14 +72,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const ProductsAdminWidget() : const PruebasWidget(),
+          appStateNotifier.loggedIn ? const HomestoreWidget() : const RegisterWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? const ProductsAdminWidget()
-              : const PruebasWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? const HomestoreWidget() : const RegisterWidget(),
         ),
         FFRoute(
           name: 'login',
@@ -92,29 +91,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const RegisterWidget(),
         ),
         FFRoute(
-          name: 'products',
-          path: '/products',
-          builder: (context, params) => const ProductsWidget(),
-        ),
-        FFRoute(
           name: 'Cart',
           path: '/cart',
           builder: (context, params) => const CartWidget(),
-        ),
-        FFRoute(
-          name: 'profile',
-          path: '/profile',
-          builder: (context, params) => const ProfileWidget(),
-        ),
-        FFRoute(
-          name: 'pay',
-          path: '/pay',
-          builder: (context, params) => const PayWidget(),
-        ),
-        FFRoute(
-          name: 'product',
-          path: '/product',
-          builder: (context, params) => const ProductWidget(),
         ),
         FFRoute(
           name: 'homestore',
@@ -132,14 +111,64 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const CategoriaAdminWidget(),
         ),
         FFRoute(
-          name: 'pruebas',
-          path: '/pruebas',
-          builder: (context, params) => const PruebasWidget(),
-        ),
-        FFRoute(
           name: 'delivery',
           path: '/delivery',
           builder: (context, params) => const DeliveryWidget(),
+        ),
+        FFRoute(
+          name: 'Profile',
+          path: '/profile',
+          builder: (context, params) => const ProfileWidget(),
+        ),
+        FFRoute(
+          name: 'productos',
+          path: '/productos',
+          builder: (context, params) => const ProductosWidget(),
+        ),
+        FFRoute(
+          name: 'DatosTarjeta',
+          path: '/datosTarjeta',
+          builder: (context, params) => const DatosTarjetaWidget(),
+        ),
+        FFRoute(
+          name: 'MetodoPago',
+          path: '/metodoPago',
+          builder: (context, params) => const MetodoPagoWidget(),
+        ),
+        FFRoute(
+          name: 'cambiarContrasena',
+          path: '/cambiarContrasena',
+          builder: (context, params) => const CambiarContrasenaWidget(),
+        ),
+        FFRoute(
+          name: 'cambiarCorreo',
+          path: '/cambiarCorreo',
+          builder: (context, params) => const CambiarCorreoWidget(),
+        ),
+        FFRoute(
+          name: 'cambiarNombre',
+          path: '/cambiarNombre',
+          builder: (context, params) => const CambiarNombreWidget(),
+        ),
+        FFRoute(
+          name: 'cambiarNumero',
+          path: '/cambiarNumero',
+          builder: (context, params) => const CambiarNumeroWidget(),
+        ),
+        FFRoute(
+          name: 'confirmacionEliminarCuenta',
+          path: '/confirmacionEliminarCuenta',
+          builder: (context, params) => const ConfirmacionEliminarCuentaWidget(),
+        ),
+        FFRoute(
+          name: 'confirmacionLogout',
+          path: '/confirmacionLogout',
+          builder: (context, params) => const ConfirmacionLogoutWidget(),
+        ),
+        FFRoute(
+          name: 'Contacto',
+          path: '/contacto',
+          builder: (context, params) => const ContactoWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -310,7 +339,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/pruebas';
+            return '/register';
           }
           return null;
         },

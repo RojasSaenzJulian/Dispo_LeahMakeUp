@@ -25,21 +25,21 @@ class ProductosRecord extends FirestoreRecord {
   double get precio => _precio ?? 0.0;
   bool hasPrecio() => _precio != null;
 
-  // "cantDispo" field.
-  int? _cantDispo;
-  int get cantDispo => _cantDispo ?? 0;
-  bool hasCantDispo() => _cantDispo != null;
-
   // "imagen" field.
   String? _imagen;
   String get imagen => _imagen ?? '';
   bool hasImagen() => _imagen != null;
 
+  // "categoria" field.
+  String? _categoria;
+  String get categoria => _categoria ?? '';
+  bool hasCategoria() => _categoria != null;
+
   void _initializeFields() {
     _nombreProducto = snapshotData['nombreProducto'] as String?;
     _precio = castToType<double>(snapshotData['precio']);
-    _cantDispo = castToType<int>(snapshotData['cantDispo']);
     _imagen = snapshotData['imagen'] as String?;
+    _categoria = snapshotData['categoria'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -79,15 +79,15 @@ class ProductosRecord extends FirestoreRecord {
 Map<String, dynamic> createProductosRecordData({
   String? nombreProducto,
   double? precio,
-  int? cantDispo,
   String? imagen,
+  String? categoria,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'nombreProducto': nombreProducto,
       'precio': precio,
-      'cantDispo': cantDispo,
       'imagen': imagen,
+      'categoria': categoria,
     }.withoutNulls,
   );
 
@@ -101,13 +101,13 @@ class ProductosRecordDocumentEquality implements Equality<ProductosRecord> {
   bool equals(ProductosRecord? e1, ProductosRecord? e2) {
     return e1?.nombreProducto == e2?.nombreProducto &&
         e1?.precio == e2?.precio &&
-        e1?.cantDispo == e2?.cantDispo &&
-        e1?.imagen == e2?.imagen;
+        e1?.imagen == e2?.imagen &&
+        e1?.categoria == e2?.categoria;
   }
 
   @override
   int hash(ProductosRecord? e) => const ListEquality()
-      .hash([e?.nombreProducto, e?.precio, e?.cantDispo, e?.imagen]);
+      .hash([e?.nombreProducto, e?.precio, e?.imagen, e?.categoria]);
 
   @override
   bool isValidKey(Object? o) => o is ProductosRecord;

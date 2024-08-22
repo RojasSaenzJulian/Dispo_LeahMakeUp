@@ -20,8 +20,14 @@ class CategoriaRecord extends FirestoreRecord {
   String get nombreCategoria => _nombreCategoria ?? '';
   bool hasNombreCategoria() => _nombreCategoria != null;
 
+  // "producto" field.
+  DocumentReference? _producto;
+  DocumentReference? get producto => _producto;
+  bool hasProducto() => _producto != null;
+
   void _initializeFields() {
     _nombreCategoria = snapshotData['nombreCategoria'] as String?;
+    _producto = snapshotData['producto'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -60,10 +66,12 @@ class CategoriaRecord extends FirestoreRecord {
 
 Map<String, dynamic> createCategoriaRecordData({
   String? nombreCategoria,
+  DocumentReference? producto,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'nombreCategoria': nombreCategoria,
+      'producto': producto,
     }.withoutNulls,
   );
 
@@ -75,12 +83,13 @@ class CategoriaRecordDocumentEquality implements Equality<CategoriaRecord> {
 
   @override
   bool equals(CategoriaRecord? e1, CategoriaRecord? e2) {
-    return e1?.nombreCategoria == e2?.nombreCategoria;
+    return e1?.nombreCategoria == e2?.nombreCategoria &&
+        e1?.producto == e2?.producto;
   }
 
   @override
   int hash(CategoriaRecord? e) =>
-      const ListEquality().hash([e?.nombreCategoria]);
+      const ListEquality().hash([e?.nombreCategoria, e?.producto]);
 
   @override
   bool isValidKey(Object? o) => o is CategoriaRecord;

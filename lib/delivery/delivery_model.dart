@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 class DeliveryModel extends FlutterFlowModel<DeliveryWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for txtProvincia widget.
   FocusNode? txtProvinciaFocusNode;
   TextEditingController? txtProvinciaTextController;
@@ -36,7 +35,6 @@ class DeliveryModel extends FlutterFlowModel<DeliveryWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     txtProvinciaFocusNode?.dispose();
     txtProvinciaTextController?.dispose();
 

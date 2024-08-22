@@ -45,10 +45,15 @@ class UsersRecord extends FirestoreRecord {
   String get phoneNumber => _phoneNumber ?? '';
   bool hasPhoneNumber() => _phoneNumber != null;
 
-  // "role" field.
-  String? _role;
-  String get role => _role ?? '';
-  bool hasRole() => _role != null;
+  // "contrasena" field.
+  String? _contrasena;
+  String get contrasena => _contrasena ?? '';
+  bool hasContrasena() => _contrasena != null;
+
+  // "rol" field.
+  int? _rol;
+  int get rol => _rol ?? 0;
+  bool hasRol() => _rol != null;
 
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
@@ -57,7 +62,8 @@ class UsersRecord extends FirestoreRecord {
     _uid = snapshotData['uid'] as String?;
     _createdTime = snapshotData['created_time'] as DateTime?;
     _phoneNumber = snapshotData['phone_number'] as String?;
-    _role = snapshotData['role'] as String?;
+    _contrasena = snapshotData['contrasena'] as String?;
+    _rol = castToType<int>(snapshotData['rol']);
   }
 
   static CollectionReference get collection =>
@@ -100,7 +106,8 @@ Map<String, dynamic> createUsersRecordData({
   String? uid,
   DateTime? createdTime,
   String? phoneNumber,
-  String? role,
+  String? contrasena,
+  int? rol,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -110,7 +117,8 @@ Map<String, dynamic> createUsersRecordData({
       'uid': uid,
       'created_time': createdTime,
       'phone_number': phoneNumber,
-      'role': role,
+      'contrasena': contrasena,
+      'rol': rol,
     }.withoutNulls,
   );
 
@@ -128,7 +136,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.uid == e2?.uid &&
         e1?.createdTime == e2?.createdTime &&
         e1?.phoneNumber == e2?.phoneNumber &&
-        e1?.role == e2?.role;
+        e1?.contrasena == e2?.contrasena &&
+        e1?.rol == e2?.rol;
   }
 
   @override
@@ -139,7 +148,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.uid,
         e?.createdTime,
         e?.phoneNumber,
-        e?.role
+        e?.contrasena,
+        e?.rol
       ]);
 
   @override

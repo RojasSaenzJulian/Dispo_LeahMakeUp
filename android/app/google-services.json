@@ -12,7 +12,20 @@
           "package_name": "com.mycompany.proyectoleahmakeup"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "357702482290-dhev2p1t4lv6in0t8rimr3dudi52i070.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.proyectoleahmakeup",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "357702482290-49puq2tu075mlr8vmcdo21f2nj4ecjqd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBKdUiU13nID2gHJsqmc49xjLEJaERM2Os"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357702482290-49puq2tu075mlr8vmcdo21f2nj4ecjqd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "357702482290-fphcotggsuppoj6imj5odmcvk2p46srj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.proyectoleahmakeup"
+              }
+            }
+          ]
         }
       }
     }
