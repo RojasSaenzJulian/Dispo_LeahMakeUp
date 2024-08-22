@@ -10,6 +10,8 @@ import 'cambiar_contrasena_model.dart';
 export 'cambiar_contrasena_model.dart';
 
 class CambiarContrasenaWidget extends StatefulWidget {
+  /// En esta vista se muestra el proceso para cambiar la contraseña donde se
+  /// confirman los cambios mediante un boton guardar.
   const CambiarContrasenaWidget({super.key});
 
   @override
@@ -102,43 +104,11 @@ class _CambiarContrasenaWidgetState extends State<CambiarContrasenaWidget> {
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Outfit',
                       color: Colors.white,
-                      fontSize: 22.0,
+                      fontSize: 20.0,
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: [
-                InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () async {
-                    context.pushNamed('Contacto');
-                  },
-                  child: Icon(
-                    Icons.info_outline,
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                    size: 30.0,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 15.0, 0.0),
-                  child: InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      context.pushNamed('Cart');
-                    },
-                    child: Icon(
-                      Icons.shopping_cart,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      size: 30.0,
-                    ),
-                  ),
-                ),
-              ],
+              actions: const [],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -441,7 +411,7 @@ class _CambiarContrasenaWidgetState extends State<CambiarContrasenaWidget> {
                                   .titleSmall
                                   .override(
                                     fontFamily: 'Readex Pro',
-                                    color: const Color(0xFFF7C2C1),
+                                    color: const Color(0xC714181B),
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
@@ -465,40 +435,15 @@ class _CambiarContrasenaWidgetState extends State<CambiarContrasenaWidget> {
                           FFButtonWidget(
                             onPressed: () async {
                               Function() navigate = () {};
-                              _model.isChange = await actions.cambiarContrasena(
-                                context,
-                                _model.txtContrasenaActualTextController.text,
-                                _model.txtContrasenaNuevaTextController.text,
-                              );
-                              if (_model.isChange!) {
-                                GoRouter.of(context).prepareAuthEvent();
-                                await authManager.signOut();
-                                GoRouter.of(context).clearRedirectLocation();
-
-                                navigate = () => context.goNamedAuth(
-                                    'Register', context.mounted);
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      'Contraseña actualizada',
-                                      style: TextStyle(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                      ),
-                                    ),
-                                    duration: const Duration(milliseconds: 4000),
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).tertiary,
-                                  ),
-                                );
-                              } else {
+                              if (_model
+                                      .txtContrasenaActualTextController.text ==
+                                  '') {
                                 await showDialog(
                                   context: context,
                                   builder: (alertDialogContext) {
                                     return AlertDialog(
-                                      title: const Text('Contraseña Incorrecta'),
                                       content: const Text(
-                                          'La contraseña ingresada es incorrecta'),
+                                          '¡Debe completar el espacio vacío!'),
                                       actions: [
                                         TextButton(
                                           onPressed: () =>
@@ -512,9 +457,83 @@ class _CambiarContrasenaWidgetState extends State<CambiarContrasenaWidget> {
                                 setState(() {
                                   _model.txtContrasenaActualTextController
                                       ?.clear();
+                                });
+                              } else if (/* NOT RECOMMENDED */ _model
+                                      .txtContrasenaNuevaTextController.text ==
+                                  'true') {
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      content: const Text(
+                                          '¡Debe completar el espacio vacío!'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: const Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                                setState(() {
                                   _model.txtContrasenaNuevaTextController
                                       ?.clear();
                                 });
+                              } else {
+                                _model.isChange =
+                                    await actions.cambiarContrasena(
+                                  context,
+                                  _model.txtContrasenaActualTextController.text,
+                                  _model.txtContrasenaNuevaTextController.text,
+                                );
+                                if (_model.isChange!) {
+                                  GoRouter.of(context).prepareAuthEvent();
+                                  await authManager.signOut();
+                                  GoRouter.of(context).clearRedirectLocation();
+
+                                  navigate = () => context.goNamedAuth(
+                                      'login', context.mounted);
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        'Contraseña actualizada',
+                                        style: TextStyle(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                        ),
+                                      ),
+                                      duration: const Duration(milliseconds: 4000),
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context).tertiary,
+                                    ),
+                                  );
+                                } else {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: const Text('Contraseña Incorrecta'),
+                                        content: const Text(
+                                            'La contraseña ingresada es incorrecta'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: const Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                  setState(() {
+                                    _model.txtContrasenaActualTextController
+                                        ?.clear();
+                                    _model.txtContrasenaNuevaTextController
+                                        ?.clear();
+                                  });
+                                }
                               }
 
                               navigate();
@@ -534,7 +553,7 @@ class _CambiarContrasenaWidgetState extends State<CambiarContrasenaWidget> {
                                   .titleSmall
                                   .override(
                                     fontFamily: 'Readex Pro',
-                                    color: Colors.white,
+                                    color: const Color(0xC714181B),
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,

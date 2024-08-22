@@ -6,17 +6,17 @@ class BsEliminarProductoModel
     extends FlutterFlowModel<BsEliminarProductoWidget> {
   ///  State fields for stateful widgets in this component.
 
-  // State field(s) for tfDelete widget.
-  FocusNode? tfDeleteFocusNode;
-  TextEditingController? tfDeleteTextController;
-  String? Function(BuildContext, String?)? tfDeleteTextControllerValidator;
+  // State field(s) for txtEliminar widget.
+  FocusNode? txtEliminarFocusNode;
+  TextEditingController? txtEliminarTextController;
+  String? Function(BuildContext, String?)? txtEliminarTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    tfDeleteFocusNode?.dispose();
-    tfDeleteTextController?.dispose();
+    txtEliminarFocusNode?.dispose();
+    txtEliminarTextController?.dispose();
   }
 }

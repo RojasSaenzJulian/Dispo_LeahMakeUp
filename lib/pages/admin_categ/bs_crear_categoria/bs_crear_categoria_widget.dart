@@ -7,6 +7,8 @@ import 'bs_crear_categoria_model.dart';
 export 'bs_crear_categoria_model.dart';
 
 class BsCrearCategoriaWidget extends StatefulWidget {
+  /// En este apartado se crean las categorías, se debe de ingresar su nombre
+  /// respectivo, y seleccionar el botón de agregar.
   const BsCrearCategoriaWidget({super.key});
 
   @override
@@ -48,6 +50,34 @@ class _BsCrearCategoriaWidgetState extends State<BsCrearCategoriaWidget> {
       ),
       child: Stack(
         children: [
+          Align(
+            alignment: const AlignmentDirectional(0.0, -1.0),
+            child: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 15.0),
+              child: Text(
+                'Completa todos los espacios',
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      fontSize: 20.0,
+                      letterSpacing: 0.0,
+                    ),
+              ),
+            ),
+          ),
+          InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () async {
+              context.pushNamed('categoriaAdmin');
+            },
+            child: const Icon(
+              Icons.chevron_left_sharp,
+              color: Color(0xFFFDB5B3),
+              size: 35.0,
+            ),
+          ),
           Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(25.0, 70.0, 25.0, 0.0),
             child: Column(
@@ -146,29 +176,58 @@ class _BsCrearCategoriaWidgetState extends State<BsCrearCategoriaWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
-                          // Create Product
+                          if (_model.txtNombreCategoriaTextController.text ==
+                              '') {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  content:
+                                      const Text('Debe completar todos los campos'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: const Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                            setState(() {
+                              _model.txtNombreCategoriaTextController?.clear();
+                            });
+                          } else {
+                            // Create Product
 
-                          await CategoriaRecord.collection
-                              .doc()
-                              .set(createCategoriaRecordData(
-                                nombreCategoria: _model
-                                    .txtNombreCategoriaTextController.text,
-                              ));
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text(
-                                '¡Categoría creada!',
-                                style: TextStyle(
-                                  color: Color(0xFF161616),
-                                ),
-                              ),
-                              duration: Duration(milliseconds: 4000),
-                              backgroundColor: Color(0xFF288B2A),
-                            ),
-                          );
-                          setState(() {
-                            _model.txtNombreCategoriaTextController?.clear();
-                          });
+                            await CategoriaRecord.collection
+                                .doc()
+                                .set(createCategoriaRecordData(
+                                  nombreCategoria: _model
+                                      .txtNombreCategoriaTextController.text,
+                                ));
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  content: const Text(
+                                      'Se ha agregado la categoría correctamente'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: const Text('Continuar'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                            setState(() {
+                              _model.txtNombreCategoriaTextController?.clear();
+                            });
+
+                            context.pushNamed('categoriaAdmin');
+                          }
                         },
                         text: 'Agregar',
                         options: FFButtonOptions(
@@ -181,7 +240,7 @@ class _BsCrearCategoriaWidgetState extends State<BsCrearCategoriaWidget> {
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
-                                    color: Colors.white,
+                                    color: const Color(0xC714181B),
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
@@ -196,20 +255,6 @@ class _BsCrearCategoriaWidgetState extends State<BsCrearCategoriaWidget> {
                   ),
                 ),
               ],
-            ),
-          ),
-          Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
-            child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 15.0),
-              child: Text(
-                'Completa todos los espacios',
-                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Readex Pro',
-                      fontSize: 20.0,
-                      letterSpacing: 0.0,
-                    ),
-              ),
             ),
           ),
         ],

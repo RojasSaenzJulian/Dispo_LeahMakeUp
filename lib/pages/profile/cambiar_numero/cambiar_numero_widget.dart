@@ -9,6 +9,8 @@ import 'cambiar_numero_model.dart';
 export 'cambiar_numero_model.dart';
 
 class CambiarNumeroWidget extends StatefulWidget {
+  /// Esta vista nos permite editar el número de teléfono realizando el cambio
+  /// mediante un boton de guardar.
   const CambiarNumeroWidget({super.key});
 
   @override
@@ -25,12 +27,12 @@ class _CambiarNumeroWidgetState extends State<CambiarNumeroWidget> {
     super.initState();
     _model = createModel(context, () => CambiarNumeroModel());
 
-    _model.txtNumeroTextController ??=
+    _model.txtTelefonoTextController ??=
         TextEditingController(text: currentPhoneNumber);
-    _model.txtNumeroFocusNode ??= FocusNode();
+    _model.txtTelefonoFocusNode ??= FocusNode();
 
-    _model.txtNumeroNuevoTextController ??= TextEditingController();
-    _model.txtNumeroNuevoFocusNode ??= FocusNode();
+    _model.txtTelefonoNuevoTextController ??= TextEditingController();
+    _model.txtTelefonoNuevoFocusNode ??= FocusNode();
   }
 
   @override
@@ -69,43 +71,11 @@ class _CambiarNumeroWidgetState extends State<CambiarNumeroWidget> {
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Outfit',
                   color: Colors.white,
-                  fontSize: 22.0,
+                  fontSize: 20.0,
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [
-            InkWell(
-              splashColor: Colors.transparent,
-              focusColor: Colors.transparent,
-              hoverColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onTap: () async {
-                context.pushNamed('Contacto');
-              },
-              child: Icon(
-                Icons.info_outline,
-                color: FlutterFlowTheme.of(context).secondaryBackground,
-                size: 30.0,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 15.0, 0.0),
-              child: InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  context.pushNamed('Cart');
-                },
-                child: Icon(
-                  Icons.shopping_cart,
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  size: 30.0,
-                ),
-              ),
-            ),
-          ],
+          actions: const [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -123,7 +93,7 @@ class _CambiarNumeroWidgetState extends State<CambiarNumeroWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        'Cambiar Numero de Telefono',
+                        'Cambiar Teléfono de Usuario',
                         style: FlutterFlowTheme.of(context).titleLarge.override(
                               fontFamily: 'Outfit',
                               letterSpacing: 0.0,
@@ -141,7 +111,7 @@ class _CambiarNumeroWidgetState extends State<CambiarNumeroWidget> {
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(1.0, 0.0, 0.0, 0.0),
                         child: Text(
-                          'Ingrese su numero de telefono nuevo y enseguida \nguardelo',
+                          'Ingrese su número de teléfono  nuevo y enseguida \nguárdelo',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Readex Pro',
@@ -162,7 +132,7 @@ class _CambiarNumeroWidgetState extends State<CambiarNumeroWidget> {
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(1.0, 25.0, 0.0, 0.0),
                         child: Text(
-                          'Su numero:',
+                          'Su número:',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Readex Pro',
@@ -187,10 +157,9 @@ class _CambiarNumeroWidgetState extends State<CambiarNumeroWidget> {
                               8.0, 0.0, 8.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => TextFormField(
-                              controller: _model.txtNumeroTextController,
-                              focusNode: _model.txtNumeroFocusNode,
+                              controller: _model.txtTelefonoTextController,
+                              focusNode: _model.txtTelefonoFocusNode,
                               autofocus: true,
-                              readOnly: true,
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelStyle: FlutterFlowTheme.of(context)
@@ -241,7 +210,8 @@ class _CambiarNumeroWidgetState extends State<CambiarNumeroWidget> {
                                     fontFamily: 'Readex Pro',
                                     letterSpacing: 0.0,
                                   ),
-                              validator: _model.txtNumeroTextControllerValidator
+                              validator: _model
+                                  .txtTelefonoTextControllerValidator
                                   .asValidator(context),
                             ),
                           ),
@@ -258,7 +228,7 @@ class _CambiarNumeroWidgetState extends State<CambiarNumeroWidget> {
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(1.0, 25.0, 0.0, 0.0),
                       child: Text(
-                        'Confirme Numero de Telefono Nuevo:',
+                        'Confirme número nuevo:',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
                               letterSpacing: 0.0,
@@ -278,8 +248,8 @@ class _CambiarNumeroWidgetState extends State<CambiarNumeroWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
-                            controller: _model.txtNumeroNuevoTextController,
-                            focusNode: _model.txtNumeroNuevoFocusNode,
+                            controller: _model.txtTelefonoNuevoTextController,
+                            focusNode: _model.txtTelefonoNuevoFocusNode,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -331,7 +301,7 @@ class _CambiarNumeroWidgetState extends State<CambiarNumeroWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             validator: _model
-                                .txtNumeroNuevoTextControllerValidator
+                                .txtTelefonoNuevoTextControllerValidator
                                 .asValidator(context),
                           ),
                         ),
@@ -362,7 +332,7 @@ class _CambiarNumeroWidgetState extends State<CambiarNumeroWidget> {
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
-                                    color: const Color(0xFFF7C2C1),
+                                    color: const Color(0xC714181B),
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
@@ -384,13 +354,57 @@ class _CambiarNumeroWidgetState extends State<CambiarNumeroWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
-                          await currentUserReference!
-                              .update(createUsersRecordData(
-                            phoneNumber:
-                                _model.txtNumeroNuevoTextController.text,
-                          ));
+                          if (_model.txtTelefonoTextController.text == '') {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  content:
+                                      const Text('¡Debe completar el espacio vacío!'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: const Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                            setState(() {
+                              _model.txtTelefonoTextController?.clear();
+                            });
+                          } else if (_model
+                                  .txtTelefonoNuevoTextController.text ==
+                              '') {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  content:
+                                      const Text('¡Debe completar el espacio vacío!'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: const Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                            setState(() {
+                              _model.txtTelefonoNuevoTextController?.clear();
+                            });
+                          } else {
+                            await currentUserReference!
+                                .update(createUsersRecordData(
+                              phoneNumber:
+                                  _model.txtTelefonoNuevoTextController.text,
+                            ));
 
-                          context.pushNamed('Profile');
+                            context.pushNamed('Profile');
+                          }
                         },
                         text: 'Guardar',
                         options: FFButtonOptions(
@@ -404,7 +418,7 @@ class _CambiarNumeroWidgetState extends State<CambiarNumeroWidget> {
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
-                                    color: Colors.white,
+                                    color: const Color(0xC714181B),
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,

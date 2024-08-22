@@ -1,5 +1,5 @@
-import '/components/custom_navbar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/pages/inicio/custom_navbar/custom_navbar_widget.dart';
 import 'homestore_widget.dart' show HomestoreWidget;
 import 'package:flutter/material.dart';
 

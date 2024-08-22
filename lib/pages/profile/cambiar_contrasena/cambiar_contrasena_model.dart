@@ -17,7 +17,7 @@ class CambiarContrasenaModel extends FlutterFlowModel<CambiarContrasenaWidget> {
   late bool txtContrasenaNuevaVisibility;
   String? Function(BuildContext, String?)?
       txtContrasenaNuevaTextControllerValidator;
-  // Stores action output result for [Custom Action - cambiarContrasena] action in Button widget.
+  // Stores action output result for [Custom Action - cambiarContrasena] action in bntGuardar widget.
   bool? isChange;
 
   @override

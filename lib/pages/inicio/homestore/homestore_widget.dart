@@ -1,8 +1,8 @@
-import '/components/custom_navbar_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/pages/inicio/custom_navbar/custom_navbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -10,6 +10,8 @@ import 'homestore_model.dart';
 export 'homestore_model.dart';
 
 class HomestoreWidget extends StatefulWidget {
+  /// Este apartado es el inicio del proyecto, en donde se muestran productos,
+  /// algunas opciones como envío, inicio, carrito y perfil.
   const HomestoreWidget({super.key});
 
   @override
@@ -376,7 +378,7 @@ class _HomestoreWidgetState extends State<HomestoreWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: Text(
-                                            'The Reefs',
+                                            'Sombras',
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
@@ -487,7 +489,7 @@ class _HomestoreWidgetState extends State<HomestoreWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: Text(
-                                            'Devils Cove',
+                                            'Brochas',
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
@@ -599,7 +601,7 @@ class _HomestoreWidgetState extends State<HomestoreWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: Text(
-                                            'Juniper Beach',
+                                            'Fijador',
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
@@ -677,7 +679,7 @@ class _HomestoreWidgetState extends State<HomestoreWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 12.0),
                       child: Text(
-                        'Otros productos',
+                        'Registra tus envíos',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
                               fontFamily: 'Readex Pro',
                               letterSpacing: 0.0,
@@ -721,7 +723,7 @@ class _HomestoreWidgetState extends State<HomestoreWidget>
                                     ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
                                       child: Image.asset(
-                                        'assets/images/no_se.png',
+                                        'assets/images/envio-express-delivery.jpg',
                                         width: double.infinity,
                                         height: 160.0,
                                         fit: BoxFit.cover,
@@ -732,15 +734,29 @@ class _HomestoreWidgetState extends State<HomestoreWidget>
                                           0.0, 8.0, 0.0, 8.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Main Header',
+                                            'Registra tu dirección de envío',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
                                                   fontFamily: 'Readex Pro',
                                                   letterSpacing: 0.0,
                                                 ),
+                                          ),
+                                          FlutterFlowIconButton(
+                                            borderRadius: 20.0,
+                                            borderWidth: 1.0,
+                                            icon: const Icon(
+                                              Icons.add_box,
+                                              color: Color(0xFFF7C2C1),
+                                              size: 35.0,
+                                            ),
+                                            onPressed: () async {
+                                              context.pushNamed('delivery');
+                                            },
                                           ),
                                         ],
                                       ),
@@ -750,7 +766,7 @@ class _HomestoreWidgetState extends State<HomestoreWidget>
                                       children: [
                                         Expanded(
                                           child: Text(
-                                            'I’ll be working on a few different proposals, let me know when you’ve got time to go over them before the weekend.',
+                                            'Contamos con entregas a domicio mediante Ecom Express brindando servicio de calidad y con una rápida  entrega en un tiempo estimado de 3-5 días en todo el territorio nacional.',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(

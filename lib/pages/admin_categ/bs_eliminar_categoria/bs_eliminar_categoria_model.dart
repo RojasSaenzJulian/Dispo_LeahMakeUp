@@ -6,17 +6,17 @@ class BsEliminarCategoriaModel
     extends FlutterFlowModel<BsEliminarCategoriaWidget> {
   ///  State fields for stateful widgets in this component.
 
-  // State field(s) for tfDelete widget.
-  FocusNode? tfDeleteFocusNode;
-  TextEditingController? tfDeleteTextController;
-  String? Function(BuildContext, String?)? tfDeleteTextControllerValidator;
+  // State field(s) for textEliminar widget.
+  FocusNode? textEliminarFocusNode;
+  TextEditingController? textEliminarTextController;
+  String? Function(BuildContext, String?)? textEliminarTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    tfDeleteFocusNode?.dispose();
-    tfDeleteTextController?.dispose();
+    textEliminarFocusNode?.dispose();
+    textEliminarTextController?.dispose();
   }
 }

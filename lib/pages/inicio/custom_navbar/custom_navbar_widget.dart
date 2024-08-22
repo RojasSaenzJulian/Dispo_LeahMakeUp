@@ -6,6 +6,8 @@ import 'custom_navbar_model.dart';
 export 'custom_navbar_model.dart';
 
 class CustomNavbarWidget extends StatefulWidget {
+  /// En este apartado se encuentran las opciones, de inicio, productos, carrito
+  /// y perfil.
   const CustomNavbarWidget({super.key});
 
   @override
@@ -41,16 +43,16 @@ class _CustomNavbarWidgetState extends State<CustomNavbarWidget> {
       child: Stack(
         children: [
           Container(
-            width: double.infinity,
-            height: 80.0,
+            width: MediaQuery.sizeOf(context).width * 1.0,
+            height: 55.0,
             decoration: const BoxDecoration(),
             child: Stack(
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.77),
+                  alignment: const AlignmentDirectional(0.0, 1.0),
                   child: Container(
-                    width: double.infinity,
-                    height: 57.94,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: 55.0,
                     decoration: const BoxDecoration(
                       color: Color(0xFFFDB5B3),
                       borderRadius: BorderRadius.only(
@@ -64,7 +66,7 @@ class _CustomNavbarWidgetState extends State<CustomNavbarWidget> {
                       alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            35.0, 0.0, 35.0, 0.0),
+                            15.0, 0.0, 15.0, 5.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -75,10 +77,10 @@ class _CustomNavbarWidgetState extends State<CustomNavbarWidget> {
                               child: FlutterFlowIconButton(
                                 borderRadius: 20.0,
                                 borderWidth: 0.0,
-                                buttonSize: 30.0,
+                                buttonSize: 50.0,
                                 icon: const Icon(
                                   Icons.home,
-                                  color: Colors.white,
+                                  color: Color(0xFFF7F6F6),
                                   size: 35.0,
                                 ),
                                 onPressed: () async {
@@ -90,7 +92,7 @@ class _CustomNavbarWidgetState extends State<CustomNavbarWidget> {
                               borderColor: Colors.transparent,
                               borderRadius: 20.0,
                               borderWidth: 1.0,
-                              buttonSize: 30.0,
+                              buttonSize: 50.0,
                               icon: const FaIcon(
                                 FontAwesomeIcons.storeAlt,
                                 color: Colors.white,
@@ -104,7 +106,7 @@ class _CustomNavbarWidgetState extends State<CustomNavbarWidget> {
                               borderColor: Colors.transparent,
                               borderRadius: 20.0,
                               borderWidth: 1.0,
-                              buttonSize: 30.0,
+                              buttonSize: 50.0,
                               icon: const Icon(
                                 Icons.shopping_cart,
                                 color: Colors.white,
@@ -121,7 +123,7 @@ class _CustomNavbarWidgetState extends State<CustomNavbarWidget> {
                                 borderColor: Colors.transparent,
                                 borderRadius: 20.0,
                                 borderWidth: 1.0,
-                                buttonSize: 30.0,
+                                buttonSize: 50.0,
                                 icon: const Icon(
                                   Icons.person,
                                   color: Colors.white,

@@ -7,6 +7,8 @@ import 'confirmacion_logout_model.dart';
 export 'confirmacion_logout_model.dart';
 
 class ConfirmacionLogoutWidget extends StatefulWidget {
+  /// Esta vista nos permite confirmar si queremos cerrar sesión o cancelar y
+  /// manternernos logueados.
   const ConfirmacionLogoutWidget({super.key});
 
   @override
@@ -116,8 +118,7 @@ class _ConfirmacionLogoutWidgetState extends State<ConfirmacionLogoutWidget> {
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Readex Pro',
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                color: const Color(0xC714181B),
                                 letterSpacing: 0.0,
                               ),
                       elevation: 3.0,
@@ -137,7 +138,7 @@ class _ConfirmacionLogoutWidgetState extends State<ConfirmacionLogoutWidget> {
                       await authManager.signOut();
                       GoRouter.of(context).clearRedirectLocation();
 
-                      context.goNamedAuth('Register', context.mounted);
+                      context.goNamedAuth('login', context.mounted);
                     },
                     text: 'Cerrar Sesión',
                     options: FFButtonOptions(
@@ -147,11 +148,11 @@ class _ConfirmacionLogoutWidgetState extends State<ConfirmacionLogoutWidget> {
                           const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: const Color(0xFBFFFFFF),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Readex Pro',
-                                color: const Color(0xFFF7C2C1),
+                                color: const Color(0xC714181B),
                                 letterSpacing: 0.0,
                               ),
                       elevation: 3.0,

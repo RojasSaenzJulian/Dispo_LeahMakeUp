@@ -5,17 +5,18 @@ import 'package:flutter/material.dart';
 class BsEditarCategoriaModel extends FlutterFlowModel<BsEditarCategoriaWidget> {
   ///  State fields for stateful widgets in this component.
 
-  // State field(s) for txtEditNombre widget.
-  FocusNode? txtEditNombreFocusNode;
-  TextEditingController? txtEditNombreTextController;
-  String? Function(BuildContext, String?)? txtEditNombreTextControllerValidator;
+  // State field(s) for txtEditarNombre widget.
+  FocusNode? txtEditarNombreFocusNode;
+  TextEditingController? txtEditarNombreTextController;
+  String? Function(BuildContext, String?)?
+      txtEditarNombreTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    txtEditNombreFocusNode?.dispose();
-    txtEditNombreTextController?.dispose();
+    txtEditarNombreFocusNode?.dispose();
+    txtEditarNombreTextController?.dispose();
   }
 }

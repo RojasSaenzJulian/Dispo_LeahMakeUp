@@ -7,6 +7,9 @@ import 'delivery_model.dart';
 export 'delivery_model.dart';
 
 class DeliveryWidget extends StatefulWidget {
+  /// En este apartado se muestran todos los campos para llenar y completar un
+  /// envío, cuando todos los datos se ingresan, se presiona el botón guardar,
+  /// para lograr guardar todos los datos.
   const DeliveryWidget({super.key});
 
   @override
@@ -76,12 +79,11 @@ class _DeliveryWidgetState extends State<DeliveryWidget> {
           title: Text(
             'Envío',
             textAlign: TextAlign.center,
-            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  fontFamily: 'Source Sans 3',
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Outfit',
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  fontSize: 25.0,
+                  fontSize: 20.0,
                   letterSpacing: 0.0,
-                  fontWeight: FontWeight.bold,
                 ),
           ),
           actions: const [],
@@ -703,40 +705,169 @@ class _DeliveryWidgetState extends State<DeliveryWidget> {
                           const EdgeInsetsDirectional.fromSTEB(16.0, 45.0, 16.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          await EnvioRecord.collection
-                              .doc()
-                              .set(createEnvioRecordData(
-                                provincia:
-                                    _model.txtProvinciaTextController.text,
-                                canton: _model.txtCantonTextController.text,
-                                distrito: _model.txtDistritoTextController.text,
-                                detalle: _model.txtDetalleTextController.text,
-                                telefono: _model.txtTelefonoTextController.text,
-                                codPostal:
-                                    _model.txtCodPostalTextController.text,
-                              ));
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
-                                'Dirección guardada!',
-                                style: TextStyle(
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
+                          if (_model.txtProvinciaTextController.text == '') {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  content: const Text(
+                                      'Debe de completar el espacio vacío.'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: const Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                            setState(() {
+                              _model.txtProvinciaTextController?.clear();
+                            });
+                          } else if (_model.txtCantonTextController.text ==
+                              '') {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  content: const Text(
+                                      'Debe de completar el espacio vacío.'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: const Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                            setState(() {
+                              _model.txtCantonTextController?.clear();
+                            });
+                          } else if (_model.txtDistritoTextController.text ==
+                              '') {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  content: const Text(
+                                      'Debe de completar el espacio vacío.'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: const Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                            setState(() {
+                              _model.txtProvinciaTextController?.clear();
+                            });
+                          } else if (_model.txtCodPostalTextController.text ==
+                              '') {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  content: const Text(
+                                      'Debe de completar el espacio vacío.'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: const Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                            setState(() {
+                              _model.txtCodPostalTextController?.clear();
+                            });
+                          } else if (_model.txtDetalleTextController.text ==
+                              '') {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  content: const Text(
+                                      'Debe de completar el espacio vacío.'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: const Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                            setState(() {
+                              _model.txtDetalleTextController?.clear();
+                            });
+                          } else if (_model.txtTelefonoTextController.text ==
+                              '') {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  content: const Text(
+                                      'Debe de completar el espacio vacío.'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: const Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                            setState(() {
+                              _model.txtTelefonoTextController?.clear();
+                            });
+                          } else {
+                            await EnvioRecord.collection
+                                .doc()
+                                .set(createEnvioRecordData(
+                                  provincia:
+                                      _model.txtProvinciaTextController.text,
+                                  canton: _model.txtCantonTextController.text,
+                                  distrito:
+                                      _model.txtDistritoTextController.text,
+                                  detalle: _model.txtDetalleTextController.text,
+                                  telefono:
+                                      _model.txtTelefonoTextController.text,
+                                  codPostal:
+                                      _model.txtCodPostalTextController.text,
+                                ));
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  'Dirección guardada!',
+                                  style: TextStyle(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                  ),
                                 ),
+                                duration: const Duration(milliseconds: 4000),
+                                backgroundColor:
+                                    FlutterFlowTheme.of(context).secondary,
                               ),
-                              duration: const Duration(milliseconds: 4000),
-                              backgroundColor:
-                                  FlutterFlowTheme.of(context).secondary,
-                            ),
-                          );
-                          setState(() {
-                            _model.txtProvinciaTextController?.clear();
-                            _model.txtCantonTextController?.clear();
-                            _model.txtDistritoTextController?.clear();
-                            _model.txtCodPostalTextController?.clear();
-                            _model.txtDetalleTextController?.clear();
-                            _model.txtTelefonoTextController?.clear();
-                          });
+                            );
+                            setState(() {
+                              _model.txtProvinciaTextController?.clear();
+                              _model.txtCantonTextController?.clear();
+                              _model.txtDistritoTextController?.clear();
+                              _model.txtCodPostalTextController?.clear();
+                              _model.txtDetalleTextController?.clear();
+                              _model.txtTelefonoTextController?.clear();
+                            });
+                          }
                         },
                         text: 'Guardar',
                         icon: const Icon(
@@ -754,7 +885,7 @@ class _DeliveryWidgetState extends State<DeliveryWidget> {
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
-                                    color: const Color(0xFF1B1B1B),
+                                    color: const Color(0xC714181B),
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,

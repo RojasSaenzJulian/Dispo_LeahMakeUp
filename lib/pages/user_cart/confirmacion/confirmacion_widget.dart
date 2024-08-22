@@ -6,6 +6,7 @@ import 'confirmacion_model.dart';
 export 'confirmacion_model.dart';
 
 class ConfirmacionWidget extends StatefulWidget {
+  /// En esta vista nos muestra un mensaje de confirmación de compra.
   const ConfirmacionWidget({super.key});
 
   @override
@@ -78,7 +79,7 @@ class _ConfirmacionWidgetState extends State<ConfirmacionWidget> {
                 color: FlutterFlowTheme.of(context).alternate,
               ),
               Container(
-                width: double.infinity,
+                width: MediaQuery.sizeOf(context).width * 1.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
@@ -104,8 +105,8 @@ class _ConfirmacionWidgetState extends State<ConfirmacionWidget> {
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
-                                    color: const Color(0xFF141414),
-                                    fontSize: 18.0,
+                                    color: const Color(0xC714181B),
+                                    fontSize: 16.0,
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,

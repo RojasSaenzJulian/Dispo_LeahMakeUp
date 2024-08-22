@@ -9,6 +9,8 @@ import 'cambiar_nombre_model.dart';
 export 'cambiar_nombre_model.dart';
 
 class CambiarNombreWidget extends StatefulWidget {
+  /// Esta vista nos permite cambiar nuestro nombre de usuario confirmando el
+  /// cambio mediante un boton de guardar.
   const CambiarNombreWidget({super.key});
 
   @override
@@ -69,43 +71,11 @@ class _CambiarNombreWidgetState extends State<CambiarNombreWidget> {
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Outfit',
                   color: Colors.white,
-                  fontSize: 22.0,
+                  fontSize: 20.0,
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [
-            InkWell(
-              splashColor: Colors.transparent,
-              focusColor: Colors.transparent,
-              hoverColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onTap: () async {
-                context.pushNamed('Contacto');
-              },
-              child: Icon(
-                Icons.info_outline,
-                color: FlutterFlowTheme.of(context).secondaryBackground,
-                size: 30.0,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 15.0, 0.0),
-              child: InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  context.pushNamed('Cart');
-                },
-                child: Icon(
-                  Icons.shopping_cart,
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  size: 30.0,
-                ),
-              ),
-            ),
-          ],
+          actions: const [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -141,7 +111,7 @@ class _CambiarNombreWidgetState extends State<CambiarNombreWidget> {
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(1.0, 0.0, 0.0, 0.0),
                         child: Text(
-                          'Ingrese su nombre de usuario nuevo y enseguida \nguardelo',
+                          'Ingrese su nombre de usuario nuevo y enseguida \nguárdelo',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Readex Pro',
@@ -257,7 +227,7 @@ class _CambiarNombreWidgetState extends State<CambiarNombreWidget> {
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(1.0, 25.0, 0.0, 0.0),
                       child: Text(
-                        'Confirme Nombre de Usuario Nuevo:',
+                        'Confirme nombre de usuario nuevo:',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
                               letterSpacing: 0.0,
@@ -361,7 +331,7 @@ class _CambiarNombreWidgetState extends State<CambiarNombreWidget> {
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
-                                    color: const Color(0xFFF7C2C1),
+                                    color: const Color(0xC714181B),
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
@@ -383,13 +353,56 @@ class _CambiarNombreWidgetState extends State<CambiarNombreWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
-                          await currentUserReference!
-                              .update(createUsersRecordData(
-                            displayName:
-                                _model.txtNombreNuevoTextController.text,
-                          ));
+                          if (_model.txtNombreTextController.text == '') {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  content:
+                                      const Text('¡Debe completar el espacio vacío!'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: const Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                            setState(() {
+                              _model.txtNombreTextController?.clear();
+                            });
+                          } else if (_model.txtNombreNuevoTextController.text ==
+                              '') {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  content:
+                                      const Text('¡Debe completar el espacio vacío!'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: const Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                            setState(() {
+                              _model.txtNombreNuevoTextController?.clear();
+                            });
+                          } else {
+                            await currentUserReference!
+                                .update(createUsersRecordData(
+                              displayName:
+                                  _model.txtNombreNuevoTextController.text,
+                            ));
 
-                          context.pushNamed('Profile');
+                            context.pushNamed('Profile');
+                          }
                         },
                         text: 'Guardar',
                         options: FFButtonOptions(
@@ -403,7 +416,7 @@ class _CambiarNombreWidgetState extends State<CambiarNombreWidget> {
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
-                                    color: Colors.white,
+                                    color: const Color(0xC714181B),
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,

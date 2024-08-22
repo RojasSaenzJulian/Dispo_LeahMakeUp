@@ -72,13 +72,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HomestoreWidget() : const RegisterWidget(),
+          appStateNotifier.loggedIn ? const HomestoreWidget() : const LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const HomestoreWidget() : const RegisterWidget(),
+              appStateNotifier.loggedIn ? const HomestoreWidget() : const LoginWidget(),
         ),
         FFRoute(
           name: 'login',
@@ -151,11 +151,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const CambiarNombreWidget(),
         ),
         FFRoute(
-          name: 'cambiarNumero',
-          path: '/cambiarNumero',
-          builder: (context, params) => const CambiarNumeroWidget(),
-        ),
-        FFRoute(
           name: 'confirmacionEliminarCuenta',
           path: '/confirmacionEliminarCuenta',
           builder: (context, params) => const ConfirmacionEliminarCuentaWidget(),
@@ -169,6 +164,54 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Contacto',
           path: '/contacto',
           builder: (context, params) => const ContactoWidget(),
+        ),
+        FFRoute(
+          name: 'crearProducto',
+          path: '/crearProducto',
+          builder: (context, params) => const CrearProductoWidget(),
+        ),
+        FFRoute(
+          name: 'administrador',
+          path: '/administrador',
+          builder: (context, params) => const AdministradorWidget(),
+        ),
+        FFRoute(
+          name: 'cambiarNumero',
+          path: '/cambiarNumero',
+          builder: (context, params) => const CambiarNumeroWidget(),
+        ),
+        FFRoute(
+          name: 'editarProducto',
+          path: '/editarProducto',
+          builder: (context, params) => EditarProductoWidget(
+            idProducto: params.getParam(
+              'idProducto',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['productos'],
+            ),
+            nombreProducto: params.getParam(
+              'nombreProducto',
+              ParamType.String,
+            ),
+            categoria: params.getParam(
+              'categoria',
+              ParamType.String,
+            ),
+            precio: params.getParam(
+              'precio',
+              ParamType.double,
+            ),
+            imagen: params.getParam(
+              'imagen',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'editarUsuario',
+          path: '/editarUsuario',
+          builder: (context, params) => const EditarUsuarioWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -339,7 +382,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/register';
+            return '/login';
           }
           return null;
         },

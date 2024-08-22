@@ -9,6 +9,8 @@ import 'cambiar_correo_model.dart';
 export 'cambiar_correo_model.dart';
 
 class CambiarCorreoWidget extends StatefulWidget {
+  /// En esta vista se muestra la opción de editar el correo electrónico y se
+  /// confirma mediante un boton de actualizar.
   const CambiarCorreoWidget({super.key});
 
   @override
@@ -69,26 +71,11 @@ class _CambiarCorreoWidgetState extends State<CambiarCorreoWidget> {
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Outfit',
                   color: Colors.white,
-                  fontSize: 22.0,
+                  fontSize: 20.0,
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [
-            InkWell(
-              splashColor: Colors.transparent,
-              focusColor: Colors.transparent,
-              hoverColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onTap: () async {
-                context.pushNamed('Contacto');
-              },
-              child: Icon(
-                Icons.info_outline,
-                color: FlutterFlowTheme.of(context).secondaryBackground,
-                size: 30.0,
-              ),
-            ),
-          ],
+          actions: const [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -342,7 +329,7 @@ class _CambiarCorreoWidgetState extends State<CambiarCorreoWidget> {
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
-                                    color: const Color(0xFFF7C2C1),
+                                    color: const Color(0xC714181B),
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
@@ -364,12 +351,55 @@ class _CambiarCorreoWidgetState extends State<CambiarCorreoWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
-                          await currentUserReference!
-                              .update(createUsersRecordData(
-                            email: _model.txtCorreoNuevoTextController.text,
-                          ));
+                          if (_model.txtCorreoTextController.text == '') {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  content:
+                                      const Text('¡Debe completar el espacio vacío!'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: const Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                            setState(() {
+                              _model.txtCorreoTextController?.clear();
+                            });
+                          } else if (_model.txtCorreoNuevoTextController.text ==
+                              '') {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  content:
+                                      const Text('¡Debe completar el espacio vacío!'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: const Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                            setState(() {
+                              _model.txtCorreoNuevoTextController?.clear();
+                            });
+                          } else {
+                            await currentUserReference!
+                                .update(createUsersRecordData(
+                              email: _model.txtCorreoNuevoTextController.text,
+                            ));
 
-                          context.pushNamed('Profile');
+                            context.pushNamed('Profile');
+                          }
                         },
                         text: 'Actualizar Email',
                         options: FFButtonOptions(
@@ -383,7 +413,7 @@ class _CambiarCorreoWidgetState extends State<CambiarCorreoWidget> {
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
-                                    color: Colors.white,
+                                    color: const Color(0xC714181B),
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,

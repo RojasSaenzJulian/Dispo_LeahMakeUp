@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 class MetodoPagoModel extends FlutterFlowModel<MetodoPagoWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for Checkbox widget.
-  bool? checkboxValue1;
-  // State field(s) for Checkbox widget.
-  bool? checkboxValue2;
+  // State field(s) for boxTarjeta widget.
+  bool? boxTarjetaValue;
+  // State field(s) for boxEfectivo widget.
+  bool? boxEfectivoValue;
 
   @override
   void initState(BuildContext context) {}

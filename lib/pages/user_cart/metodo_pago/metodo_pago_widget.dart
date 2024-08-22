@@ -9,6 +9,8 @@ import 'metodo_pago_model.dart';
 export 'metodo_pago_model.dart';
 
 class MetodoPagoWidget extends StatefulWidget {
+  /// En esta vista nos permite seleccionar nuestro método de pago ya sea
+  /// tarjeta o efectivo.
   const MetodoPagoWidget({super.key});
 
   @override
@@ -60,11 +62,10 @@ class _MetodoPagoWidgetState extends State<MetodoPagoWidget> {
           title: Text(
             'Método de Pago',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Source Sans 3',
+                  fontFamily: 'Outfit',
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  fontSize: 25.0,
+                  fontSize: 20.0,
                   letterSpacing: 0.0,
-                  fontWeight: FontWeight.bold,
                 ),
           ),
           actions: const [],
@@ -94,12 +95,11 @@ class _MetodoPagoWidgetState extends State<MetodoPagoWidget> {
                               Text(
                                 'Seleccione un método de pago:',
                                 style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
+                                    .headlineMedium
                                     .override(
-                                      fontFamily: 'Source Sans 3',
+                                      fontFamily: 'Outfit',
                                       fontSize: 20.0,
                                       letterSpacing: 0.0,
-                                      fontWeight: FontWeight.bold,
                                     ),
                               ),
                             ],
@@ -127,10 +127,10 @@ class _MetodoPagoWidgetState extends State<MetodoPagoWidget> {
                                           .secondaryText,
                                 ),
                                 child: Checkbox(
-                                  value: _model.checkboxValue1 ??= false,
+                                  value: _model.boxTarjetaValue ??= false,
                                   onChanged: (newValue) async {
                                     setState(() =>
-                                        _model.checkboxValue1 = newValue!);
+                                        _model.boxTarjetaValue = newValue!);
                                   },
                                   side: BorderSide(
                                     width: 2,
@@ -144,12 +144,11 @@ class _MetodoPagoWidgetState extends State<MetodoPagoWidget> {
                               Text(
                                 'Tarjeta de crédito/debito',
                                 style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
+                                    .headlineMedium
                                     .override(
-                                      fontFamily: 'Source Sans 3',
-                                      fontSize: 18.0,
+                                      fontFamily: 'Outfit',
+                                      fontSize: 16.0,
                                       letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w600,
                                     ),
                               ),
                             ],
@@ -177,10 +176,10 @@ class _MetodoPagoWidgetState extends State<MetodoPagoWidget> {
                                           .secondaryText,
                                 ),
                                 child: Checkbox(
-                                  value: _model.checkboxValue2 ??= false,
+                                  value: _model.boxEfectivoValue ??= false,
                                   onChanged: (newValue) async {
                                     setState(() =>
-                                        _model.checkboxValue2 = newValue!);
+                                        _model.boxEfectivoValue = newValue!);
                                   },
                                   side: BorderSide(
                                     width: 2,
@@ -194,12 +193,11 @@ class _MetodoPagoWidgetState extends State<MetodoPagoWidget> {
                               Text(
                                 'Efectivo',
                                 style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
+                                    .headlineMedium
                                     .override(
-                                      fontFamily: 'Source Sans 3',
-                                      fontSize: 18.0,
+                                      fontFamily: 'Outfit',
+                                      fontSize: 17.0,
                                       letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w600,
                                     ),
                               ),
                             ],
@@ -248,14 +246,13 @@ class _MetodoPagoWidgetState extends State<MetodoPagoWidget> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          'Total a pagar:',
+                                          'Total:  ',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
+                                              .headlineMedium
                                               .override(
-                                                fontFamily: 'Source Sans 3',
-                                                fontSize: 18.0,
+                                                fontFamily: 'Outfit',
+                                                fontSize: 19.0,
                                                 letterSpacing: 0.0,
-                                                fontWeight: FontWeight.bold,
                                               ),
                                         ),
                                       ],
@@ -376,11 +373,11 @@ class _MetodoPagoWidgetState extends State<MetodoPagoWidget> {
                                       0.0, 0.0, 0.0, 0.0),
                                   color: const Color(0xFFF7C2C1),
                                   textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
+                                      .displayMedium
                                       .override(
-                                        fontFamily: 'Source Sans 3',
-                                        color: Colors.black,
-                                        fontSize: 20.0,
+                                        fontFamily: 'Outfit',
+                                        color: const Color(0xC714181B),
+                                        fontSize: 16.0,
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,

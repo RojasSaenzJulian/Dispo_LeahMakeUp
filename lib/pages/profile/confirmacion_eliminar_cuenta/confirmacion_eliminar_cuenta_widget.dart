@@ -7,6 +7,8 @@ import 'confirmacion_eliminar_cuenta_model.dart';
 export 'confirmacion_eliminar_cuenta_model.dart';
 
 class ConfirmacionEliminarCuentaWidget extends StatefulWidget {
+  /// En esta vista nos permite confirmar o cancelar al momento de intentar
+  /// eliminar la cuenta.
   const ConfirmacionEliminarCuentaWidget({super.key});
 
   @override
@@ -117,8 +119,7 @@ class _ConfirmacionEliminarCuentaWidgetState
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Readex Pro',
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                color: const Color(0xC714181B),
                                 letterSpacing: 0.0,
                               ),
                       elevation: 3.0,
@@ -138,7 +139,7 @@ class _ConfirmacionEliminarCuentaWidgetState
 
                       context.pushNamed('homestore');
                     },
-                    text: 'Si, eliminar',
+                    text: 'Sí, eliminar',
                     options: FFButtonOptions(
                       width: MediaQuery.sizeOf(context).width * 0.8,
                       height: 55.0,
@@ -150,7 +151,7 @@ class _ConfirmacionEliminarCuentaWidgetState
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Readex Pro',
-                                color: const Color(0xFFF7C2C1),
+                                color: const Color(0xC714181B),
                                 letterSpacing: 0.0,
                               ),
                       elevation: 3.0,

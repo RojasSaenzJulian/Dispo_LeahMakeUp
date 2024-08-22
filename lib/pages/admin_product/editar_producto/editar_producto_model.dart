@@ -1,11 +1,10 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'bs_crear_producto_widget.dart' show BsCrearProductoWidget;
+import 'editar_producto_widget.dart' show EditarProductoWidget;
 import 'package:flutter/material.dart';
 
-class BsCrearProductoModel extends FlutterFlowModel<BsCrearProductoWidget> {
-  ///  State fields for stateful widgets in this component.
+class EditarProductoModel extends FlutterFlowModel<EditarProductoWidget> {
+  ///  State fields for stateful widgets in this page.
 
-  final formKey = GlobalKey<FormState>();
   // State field(s) for txtNombreProducto widget.
   FocusNode? txtNombreProductoFocusNode;
   TextEditingController? txtNombreProductoTextController;
@@ -15,48 +14,17 @@ class BsCrearProductoModel extends FlutterFlowModel<BsCrearProductoWidget> {
   FocusNode? txtCategoriaFocusNode;
   TextEditingController? txtCategoriaTextController;
   String? Function(BuildContext, String?)? txtCategoriaTextControllerValidator;
-  String? _txtCategoriaTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Producto requerido...';
-    }
-
-    if (val.isEmpty) {
-      return 'Requires at least 1 characters.';
-    }
-    if (val.length > 20) {
-      return 'Maximum 20 characters allowed, currently ${val.length}.';
-    }
-
-    return null;
-  }
-
   // State field(s) for txtPrecio widget.
   FocusNode? txtPrecioFocusNode;
   TextEditingController? txtPrecioTextController;
   String? Function(BuildContext, String?)? txtPrecioTextControllerValidator;
-  String? _txtPrecioTextControllerValidator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Precio requerido...';
-    }
-
-    if (val.isEmpty) {
-      return 'Requires at least 1 characters.';
-    }
-
-    return null;
-  }
-
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl = '';
 
   @override
-  void initState(BuildContext context) {
-    txtCategoriaTextControllerValidator = _txtCategoriaTextControllerValidator;
-    txtPrecioTextControllerValidator = _txtPrecioTextControllerValidator;
-  }
+  void initState(BuildContext context) {}
 
   @override
   void dispose() {

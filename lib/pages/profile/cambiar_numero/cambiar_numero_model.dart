@@ -5,25 +5,25 @@ import 'package:flutter/material.dart';
 class CambiarNumeroModel extends FlutterFlowModel<CambiarNumeroWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for txtNumero widget.
-  FocusNode? txtNumeroFocusNode;
-  TextEditingController? txtNumeroTextController;
-  String? Function(BuildContext, String?)? txtNumeroTextControllerValidator;
-  // State field(s) for txtNumeroNuevo widget.
-  FocusNode? txtNumeroNuevoFocusNode;
-  TextEditingController? txtNumeroNuevoTextController;
+  // State field(s) for txtTelefono widget.
+  FocusNode? txtTelefonoFocusNode;
+  TextEditingController? txtTelefonoTextController;
+  String? Function(BuildContext, String?)? txtTelefonoTextControllerValidator;
+  // State field(s) for txtTelefonoNuevo widget.
+  FocusNode? txtTelefonoNuevoFocusNode;
+  TextEditingController? txtTelefonoNuevoTextController;
   String? Function(BuildContext, String?)?
-      txtNumeroNuevoTextControllerValidator;
+      txtTelefonoNuevoTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    txtNumeroFocusNode?.dispose();
-    txtNumeroTextController?.dispose();
+    txtTelefonoFocusNode?.dispose();
+    txtTelefonoTextController?.dispose();
 
-    txtNumeroNuevoFocusNode?.dispose();
-    txtNumeroNuevoTextController?.dispose();
+    txtTelefonoNuevoFocusNode?.dispose();
+    txtTelefonoNuevoTextController?.dispose();
   }
 }

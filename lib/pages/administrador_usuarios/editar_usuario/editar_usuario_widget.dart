@@ -7,27 +7,27 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
-import 'profile_model.dart';
-export 'profile_model.dart';
+import 'editar_usuario_model.dart';
+export 'editar_usuario_model.dart';
 
-class ProfileWidget extends StatefulWidget {
-  /// Esta vista nos muestra la información del perfil y la opción de editar
-  /// cada aspecto además de cerrar sesión y eliminar la cuenta.
-  const ProfileWidget({super.key});
+class EditarUsuarioWidget extends StatefulWidget {
+  /// Esta vista nos muestra la información del perfil y la opción de editar,
+  /// definir rol y cada aspecto además de cerrar sesión y eliminar la cuenta.
+  const EditarUsuarioWidget({super.key});
 
   @override
-  State<ProfileWidget> createState() => _ProfileWidgetState();
+  State<EditarUsuarioWidget> createState() => _EditarUsuarioWidgetState();
 }
 
-class _ProfileWidgetState extends State<ProfileWidget> {
-  late ProfileModel _model;
+class _EditarUsuarioWidgetState extends State<EditarUsuarioWidget> {
+  late EditarUsuarioModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ProfileModel());
+    _model = createModel(context, () => EditarUsuarioModel());
   }
 
   @override
@@ -61,13 +61,13 @@ class _ProfileWidgetState extends State<ProfileWidget> {
             ),
           );
         }
-        List<UsersRecord> profileUsersRecordList = snapshot.data!;
+        List<UsersRecord> editarUsuarioUsersRecordList = snapshot.data!;
         // Return an empty Container when the item does not exist.
         if (snapshot.data!.isEmpty) {
           return Container();
         }
-        final profileUsersRecord = profileUsersRecordList.isNotEmpty
-            ? profileUsersRecordList.first
+        final editarUsuarioUsersRecord = editarUsuarioUsersRecordList.isNotEmpty
+            ? editarUsuarioUsersRecordList.first
             : null;
 
         return GestureDetector(
@@ -93,7 +93,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                 },
               ),
               title: Text(
-                'Perfil',
+                'Editar Perfil adm',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Outfit',
                       color: Colors.white,
@@ -119,7 +119,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           children: [
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 15.0, 0.0, 0.0),
+                                  0.0, 15.0, 0.0, 30.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -449,46 +449,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         color: Color(0xFFF7C2C1),
                                         size: 16.0,
                                       ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 30.0, 0.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  FFButtonWidget(
-                                    onPressed: () async {
-                                      context.pushNamed('confirmacionLogout');
-                                    },
-                                    text: 'Cerrar Sesión',
-                                    options: FFButtonOptions(
-                                      width: MediaQuery.sizeOf(context).width *
-                                          0.8,
-                                      height: 55.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFFF7C2C1),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: const Color(0xC714181B),
-                                            letterSpacing: 0.0,
-                                          ),
-                                      elevation: 5.0,
-                                      borderSide: const BorderSide(
-                                        color: Color(0xFFF7C2C1),
-                                        width: 3.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(16.0),
                                     ),
                                   ),
                                 ],

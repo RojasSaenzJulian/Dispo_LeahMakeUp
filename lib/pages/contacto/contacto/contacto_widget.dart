@@ -1,4 +1,3 @@
-import '/components/custom_navbar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -8,6 +7,7 @@ import 'contacto_model.dart';
 export 'contacto_model.dart';
 
 class ContactoWidget extends StatefulWidget {
+  /// Esta vista nos muestra la información de contacto de la tienda.
   const ContactoWidget({super.key});
 
   @override
@@ -59,12 +59,11 @@ class _ContactoWidgetState extends State<ContactoWidget> {
           title: Text(
             'Contacto',
             textAlign: TextAlign.center,
-            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  fontFamily: 'Source Sans 3',
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  fontSize: 25.0,
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Outfit',
+                  color: Colors.white,
+                  fontSize: 20.0,
                   letterSpacing: 0.0,
-                  fontWeight: FontWeight.bold,
                 ),
           ),
           actions: const [],
@@ -73,176 +72,180 @@ class _ContactoWidgetState extends State<ContactoWidget> {
         ),
         body: SafeArea(
           top: true,
-          child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 45.0, 0.0, 0.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Row(
+          child: Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 45.0, 0.0, 0.0),
+                child: Column(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(6.0),
-                      child: Image.asset(
-                        'assets/images/LOGO_LEAH.png',
-                        width: MediaQuery.sizeOf(context).width * 0.9,
-                        height: 400.0,
-                        fit: BoxFit.cover,
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(6.0),
+                          child: Image.asset(
+                            'assets/images/LOGO_LEAH.png',
+                            width: MediaQuery.sizeOf(context).width * 0.9,
+                            height: 400.0,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          15.0, 15.0, 15.0, 15.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Teléfono: +506 2222-2222',
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          15.0, 15.0, 15.0, 15.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Correo: info@leahmakeup.com',
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          15.0, 15.0, 15.0, 15.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Horario de Trabajo',
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  fontSize: 20.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 15.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Lunes - Domingo : 10:00 a.m. a 8:00 p.m.',
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          15.0, 15.0, 15.0, 15.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Redes Sociales',
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  fontSize: 20.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 15.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          FlutterFlowIconButton(
+                            borderColor: Colors.transparent,
+                            borderRadius: 20.0,
+                            borderWidth: 1.0,
+                            buttonSize: 50.0,
+                            icon: const FaIcon(
+                              FontAwesomeIcons.whatsapp,
+                              color: Color(0xFF2B2665),
+                              size: 30.0,
+                            ),
+                            onPressed: () async {
+                              await launchURL(
+                                  'https://wa.me/71397781?text=Buenas%2C%20estoy%20interesada%20en%20un%20producto%21');
+                            },
+                          ),
+                          FlutterFlowIconButton(
+                            borderColor: Colors.transparent,
+                            borderRadius: 20.0,
+                            borderWidth: 1.0,
+                            buttonSize: 50.0,
+                            icon: FaIcon(
+                              FontAwesomeIcons.instagram,
+                              color: FlutterFlowTheme.of(context).tertiary,
+                              size: 30.0,
+                            ),
+                            onPressed: () async {
+                              await launchURL(
+                                  'https://www.instagram.com/leah_makeup_and_accesories/');
+                            },
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Teléfono: +506 2222-2222',
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Readex Pro',
-                              fontSize: 18.0,
-                              letterSpacing: 0.0,
-                            ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Correo: info@leahmakeup.com',
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Readex Pro',
-                              fontSize: 18.0,
-                              letterSpacing: 0.0,
-                            ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Horario de Trabajo',
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Readex Pro',
-                              fontSize: 20.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 15.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Lunes - Domingo : 10:00 a.m. a 8:00 p.m.',
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Readex Pro',
-                              fontSize: 18.0,
-                              letterSpacing: 0.0,
-                            ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Redes Sociales',
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Readex Pro',
-                              fontSize: 20.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 15.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      FlutterFlowIconButton(
-                        borderColor: Colors.transparent,
-                        borderRadius: 20.0,
-                        borderWidth: 1.0,
-                        buttonSize: 50.0,
-                        icon: const FaIcon(
-                          FontAwesomeIcons.whatsapp,
-                          color: Color(0xFF2B2665),
-                          size: 30.0,
-                        ),
-                        onPressed: () async {
-                          await launchURL(
-                              'https://wa.me/71397781?text=Buenas%2C%20estoy%20interesada%20en%20un%20producto%21');
-                        },
-                      ),
-                      FlutterFlowIconButton(
-                        borderColor: Colors.transparent,
-                        borderRadius: 20.0,
-                        borderWidth: 1.0,
-                        buttonSize: 50.0,
-                        icon: FaIcon(
-                          FontAwesomeIcons.instagram,
-                          color: FlutterFlowTheme.of(context).tertiary,
-                          size: 30.0,
-                        ),
-                        onPressed: () async {
-                          await launchURL(
-                              'https://www.instagram.com/leah_makeup_and_accesories/');
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-                Flexible(
-                  child: Align(
-                    alignment: const AlignmentDirectional(0.0, 1.0),
-                    child: wrapWithModel(
-                      model: _model.customNavbarModel,
-                      updateCallback: () => setState(() {}),
-                      child: const CustomNavbarWidget(),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

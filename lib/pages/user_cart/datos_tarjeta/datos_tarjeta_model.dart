@@ -6,41 +6,41 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 class DatosTarjetaModel extends FlutterFlowModel<DatosTarjetaWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  final textFieldMask1 = MaskTextInputFormatter(mask: '#### #### #### ####');
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  final textFieldMask2 = MaskTextInputFormatter(mask: '##/##');
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  final textFieldMask3 = MaskTextInputFormatter(mask: '###');
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
+  // State field(s) for txtNumTarjeta widget.
+  FocusNode? txtNumTarjetaFocusNode;
+  TextEditingController? txtNumTarjetaTextController;
+  final txtNumTarjetaMask = MaskTextInputFormatter(mask: '#### #### #### ####');
+  String? Function(BuildContext, String?)? txtNumTarjetaTextControllerValidator;
+  // State field(s) for txtFechaVen widget.
+  FocusNode? txtFechaVenFocusNode;
+  TextEditingController? txtFechaVenTextController;
+  final txtFechaVenMask = MaskTextInputFormatter(mask: '##/##');
+  String? Function(BuildContext, String?)? txtFechaVenTextControllerValidator;
+  // State field(s) for txtCVC widget.
+  FocusNode? txtCVCFocusNode;
+  TextEditingController? txtCVCTextController;
+  final txtCVCMask = MaskTextInputFormatter(mask: '###');
+  String? Function(BuildContext, String?)? txtCVCTextControllerValidator;
+  // State field(s) for txtTitular widget.
+  FocusNode? txtTitularFocusNode;
+  TextEditingController? txtTitularTextController;
+  String? Function(BuildContext, String?)? txtTitularTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    txtNumTarjetaFocusNode?.dispose();
+    txtNumTarjetaTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    txtFechaVenFocusNode?.dispose();
+    txtFechaVenTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    txtCVCFocusNode?.dispose();
+    txtCVCTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
+    txtTitularFocusNode?.dispose();
+    txtTitularTextController?.dispose();
   }
 }

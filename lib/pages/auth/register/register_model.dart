@@ -5,34 +5,34 @@ import 'package:flutter/material.dart';
 class RegisterModel extends FlutterFlowModel<RegisterWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
-  // State field(s) for emailAddress widget.
-  FocusNode? emailAddressFocusNode;
-  TextEditingController? emailAddressTextController;
-  String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
-  // State field(s) for password widget.
-  FocusNode? passwordFocusNode;
-  TextEditingController? passwordTextController;
-  late bool passwordVisibility;
-  String? Function(BuildContext, String?)? passwordTextControllerValidator;
+  // State field(s) for txtNombre widget.
+  FocusNode? txtNombreFocusNode;
+  TextEditingController? txtNombreTextController;
+  String? Function(BuildContext, String?)? txtNombreTextControllerValidator;
+  // State field(s) for txtCorreo widget.
+  FocusNode? txtCorreoFocusNode;
+  TextEditingController? txtCorreoTextController;
+  String? Function(BuildContext, String?)? txtCorreoTextControllerValidator;
+  // State field(s) for txtContrasena widget.
+  FocusNode? txtContrasenaFocusNode;
+  TextEditingController? txtContrasenaTextController;
+  late bool txtContrasenaVisibility;
+  String? Function(BuildContext, String?)? txtContrasenaTextControllerValidator;
 
   @override
   void initState(BuildContext context) {
-    passwordVisibility = false;
+    txtContrasenaVisibility = false;
   }
 
   @override
   void dispose() {
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
+    txtNombreFocusNode?.dispose();
+    txtNombreTextController?.dispose();
 
-    emailAddressFocusNode?.dispose();
-    emailAddressTextController?.dispose();
+    txtCorreoFocusNode?.dispose();
+    txtCorreoTextController?.dispose();
 
-    passwordFocusNode?.dispose();
-    passwordTextController?.dispose();
+    txtContrasenaFocusNode?.dispose();
+    txtContrasenaTextController?.dispose();
   }
 }

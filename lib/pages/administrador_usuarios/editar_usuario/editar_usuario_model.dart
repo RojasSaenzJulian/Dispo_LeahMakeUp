@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'profile_widget.dart' show ProfileWidget;
+import 'editar_usuario_widget.dart' show EditarUsuarioWidget;
 import 'package:flutter/material.dart';
 
-class ProfileModel extends FlutterFlowModel<ProfileWidget> {
+class EditarUsuarioModel extends FlutterFlowModel<EditarUsuarioWidget> {
   ///  State fields for stateful widgets in this page.
 
   bool isDataUploading = false;

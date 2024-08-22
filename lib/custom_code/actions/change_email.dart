@@ -15,12 +15,9 @@ Future<bool> changeEmail(
   String currentPassword,
   String newEmail,
 ) async {
-  // Add your function code here!
   bool success = false;
 
-  //Create an instance of the current user.
   var user = await FirebaseAuth.instance.currentUser!;
-  //Must re-authenticate user before updating the password. Otherwise it may fail or user get signed out.
 
   final cred = await EmailAuthProvider.credential(
       email: user.email!, password: currentPassword);

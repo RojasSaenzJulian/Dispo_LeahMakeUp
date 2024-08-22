@@ -10,6 +10,8 @@ import 'datos_tarjeta_model.dart';
 export 'datos_tarjeta_model.dart';
 
 class DatosTarjetaWidget extends StatefulWidget {
+  /// En esta vista nos permite registrar un método de pago para realizar el
+  /// pago mediante un botón de realizar pago
   const DatosTarjetaWidget({super.key});
 
   @override
@@ -26,17 +28,17 @@ class _DatosTarjetaWidgetState extends State<DatosTarjetaWidget> {
     super.initState();
     _model = createModel(context, () => DatosTarjetaModel());
 
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.txtNumTarjetaTextController ??= TextEditingController();
+    _model.txtNumTarjetaFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.txtFechaVenTextController ??= TextEditingController();
+    _model.txtFechaVenFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.txtCVCTextController ??= TextEditingController();
+    _model.txtCVCFocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.txtTitularTextController ??= TextEditingController();
+    _model.txtTitularFocusNode ??= FocusNode();
   }
 
   @override
@@ -73,11 +75,10 @@ class _DatosTarjetaWidgetState extends State<DatosTarjetaWidget> {
           title: Text(
             'Datos de Pago',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Source Sans 3',
+                  fontFamily: 'Outfit',
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  fontSize: 25.0,
+                  fontSize: 20.0,
                   letterSpacing: 0.0,
-                  fontWeight: FontWeight.bold,
                 ),
           ),
           actions: const [],
@@ -110,12 +111,11 @@ class _DatosTarjetaWidgetState extends State<DatosTarjetaWidget> {
                                 'Ingrese los datos de la tarjeta:',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
+                                    .headlineMedium
                                     .override(
-                                      fontFamily: 'Source Sans 3',
+                                      fontFamily: 'Outfit',
                                       fontSize: 20.0,
                                       letterSpacing: 0.0,
-                                      fontWeight: FontWeight.bold,
                                     ),
                               ),
                             ],
@@ -133,8 +133,9 @@ class _DatosTarjetaWidgetState extends State<DatosTarjetaWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
-                                    controller: _model.textController1,
-                                    focusNode: _model.textFieldFocusNode1,
+                                    controller:
+                                        _model.txtNumTarjetaTextController,
+                                    focusNode: _model.txtNumTarjetaFocusNode,
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -195,9 +196,10 @@ class _DatosTarjetaWidgetState extends State<DatosTarjetaWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     keyboardType: TextInputType.number,
-                                    validator: _model.textController1Validator
+                                    validator: _model
+                                        .txtNumTarjetaTextControllerValidator
                                         .asValidator(context),
-                                    inputFormatters: [_model.textFieldMask1],
+                                    inputFormatters: [_model.txtNumTarjetaMask],
                                   ),
                                 ),
                               ),
@@ -215,8 +217,9 @@ class _DatosTarjetaWidgetState extends State<DatosTarjetaWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
-                                    controller: _model.textController2,
-                                    focusNode: _model.textFieldFocusNode2,
+                                    controller:
+                                        _model.txtFechaVenTextController,
+                                    focusNode: _model.txtFechaVenFocusNode,
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -277,9 +280,10 @@ class _DatosTarjetaWidgetState extends State<DatosTarjetaWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     keyboardType: TextInputType.number,
-                                    validator: _model.textController2Validator
+                                    validator: _model
+                                        .txtFechaVenTextControllerValidator
                                         .asValidator(context),
-                                    inputFormatters: [_model.textFieldMask2],
+                                    inputFormatters: [_model.txtFechaVenMask],
                                   ),
                                 ),
                               ),
@@ -297,8 +301,8 @@ class _DatosTarjetaWidgetState extends State<DatosTarjetaWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
-                                    controller: _model.textController3,
-                                    focusNode: _model.textFieldFocusNode3,
+                                    controller: _model.txtCVCTextController,
+                                    focusNode: _model.txtCVCFocusNode,
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -359,9 +363,10 @@ class _DatosTarjetaWidgetState extends State<DatosTarjetaWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     keyboardType: TextInputType.number,
-                                    validator: _model.textController3Validator
+                                    validator: _model
+                                        .txtCVCTextControllerValidator
                                         .asValidator(context),
-                                    inputFormatters: [_model.textFieldMask3],
+                                    inputFormatters: [_model.txtCVCMask],
                                   ),
                                 ),
                               ),
@@ -379,8 +384,8 @@ class _DatosTarjetaWidgetState extends State<DatosTarjetaWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
-                                    controller: _model.textController4,
-                                    focusNode: _model.textFieldFocusNode4,
+                                    controller: _model.txtTitularTextController,
+                                    focusNode: _model.txtTitularFocusNode,
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -440,7 +445,8 @@ class _DatosTarjetaWidgetState extends State<DatosTarjetaWidget> {
                                           fontFamily: 'Readex Pro',
                                           letterSpacing: 0.0,
                                         ),
-                                    validator: _model.textController4Validator
+                                    validator: _model
+                                        .txtTitularTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -491,14 +497,13 @@ class _DatosTarjetaWidgetState extends State<DatosTarjetaWidget> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          'Total a pagar:',
+                                          'Total: ',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
+                                              .headlineMedium
                                               .override(
-                                                fontFamily: 'Source Sans 3',
-                                                fontSize: 18.0,
+                                                fontFamily: 'Outfit',
+                                                fontSize: 19.0,
                                                 letterSpacing: 0.0,
-                                                fontWeight: FontWeight.bold,
                                               ),
                                         ),
                                       ],
@@ -607,23 +612,112 @@ class _DatosTarjetaWidgetState extends State<DatosTarjetaWidget> {
                             children: [
                               FFButtonWidget(
                                 onPressed: () async {
-                                  await showModalBottomSheet(
-                                    isScrollControlled: true,
-                                    backgroundColor: Colors.transparent,
-                                    enableDrag: false,
-                                    context: context,
-                                    builder: (context) {
-                                      return GestureDetector(
-                                        onTap: () =>
-                                            FocusScope.of(context).unfocus(),
-                                        child: Padding(
-                                          padding:
-                                              MediaQuery.viewInsetsOf(context),
-                                          child: const ConfirmacionWidget(),
-                                        ),
-                                      );
-                                    },
-                                  ).then((value) => safeSetState(() {}));
+                                  if (_model.txtNumTarjetaTextController.text ==
+                                      '') {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (alertDialogContext) {
+                                        return AlertDialog(
+                                          content: const Text(
+                                              'Debe completar el espacio vacío...'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: const Text('Ok'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                    setState(() {
+                                      _model.txtNumTarjetaTextController
+                                          ?.clear();
+                                    });
+                                  } else if (_model
+                                          .txtFechaVenTextController.text ==
+                                      '') {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (alertDialogContext) {
+                                        return AlertDialog(
+                                          content: const Text(
+                                              'Debe completar el espacio vacío...'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: const Text('Ok'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                    setState(() {
+                                      _model.txtFechaVenTextController?.clear();
+                                    });
+                                  } else if (_model.txtCVCTextController.text ==
+                                      '') {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (alertDialogContext) {
+                                        return AlertDialog(
+                                          content: const Text(
+                                              'Debe completar el espacio vacío...'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: const Text('Ok'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                    setState(() {
+                                      _model.txtFechaVenTextController?.clear();
+                                    });
+                                  } else if (_model
+                                          .txtTitularTextController.text ==
+                                      '') {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (alertDialogContext) {
+                                        return AlertDialog(
+                                          content: const Text(
+                                              'Debe completar el espacio vacío...'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: const Text('Ok'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                    setState(() {
+                                      _model.txtFechaVenTextController?.clear();
+                                    });
+                                  } else {
+                                    await showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor: Colors.transparent,
+                                      enableDrag: false,
+                                      context: context,
+                                      builder: (context) {
+                                        return GestureDetector(
+                                          onTap: () =>
+                                              FocusScope.of(context).unfocus(),
+                                          child: Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child: const ConfirmacionWidget(),
+                                          ),
+                                        );
+                                      },
+                                    ).then((value) => safeSetState(() {}));
+                                  }
                                 },
                                 text: 'Realizar Pago',
                                 options: FFButtonOptions(
@@ -635,11 +729,11 @@ class _DatosTarjetaWidgetState extends State<DatosTarjetaWidget> {
                                       0.0, 0.0, 0.0, 0.0),
                                   color: const Color(0xFFF7C2C1),
                                   textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
+                                      .headlineMedium
                                       .override(
-                                        fontFamily: 'Source Sans 3',
-                                        color: const Color(0xFF080808),
-                                        fontSize: 20.0,
+                                        fontFamily: 'Outfit',
+                                        color: const Color(0xC714181B),
+                                        fontSize: 16.0,
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
